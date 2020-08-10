@@ -1,0 +1,55 @@
+body {
+    box-sizing: border-box;
+}
+
+.start-overlay,
+.win-overlay,
+.lose-overlay {
+position: fixed;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: rgba(0, 0, 0, .6);
+cursor: pointer;
+}
+
+.win-overlay {
+    display: none;
+}
+
+.lose-overlay {
+    display: none;
+}
+
+#grid {
+display: grid;
+perspective: 1000px;
+}
+
+.card {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  border: 2px solid lime; 
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: .3s;
+}
+
+.card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
