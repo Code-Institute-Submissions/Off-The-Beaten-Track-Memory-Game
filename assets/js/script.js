@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
 const defaultImage = 'assets/images/ireland.jpg',
-    maxFlip = 2,
+      maxFlip = 2,
       cardList = [
         {
             name: 'boat',
@@ -78,12 +78,10 @@ const defaultImage = 'assets/images/ireland.jpg',
     ];
 
 let gameCards = [...cardList, ...cardList],
-//let clickedCards = [];
-//let clickedCardsId = [];
 lockBoard = false,
-firstCard,
-secondCard,
-flipCounter = 0;
+clickedCards = [],
+flipCounter = 0,
+matchedCards = [];
 
 
 function shuffleCards(array) {
@@ -102,6 +100,18 @@ function shuffleCards(array) {
     }
 };
 
+function unFlip(PreviousCard, CurrentCard) {
+        let previousCard = document.querySelectorAll(`[data-name="${PreviousCard}"]`)[0];
+        let currentCard = document.querySelectorAll(`[data-name="${CurrentCard}"]`)[0];
+
+        currentCard.setAttribute('data-name', CurrentCard);
+        currentCard.setAttribute('data-path', currentCard.src);
+        currentCard.setAttribute('src', defaultImage);
+
+        previousCard.setAttribute('data-name', PreviousCard);
+        previousCard.setAttribute('data-path', previousCard.src);
+        previousCard.setAttribute('src', defaultImage);
+}
 
 function createBoard(gameCards) {
     const grid = document.getElementById('grid');
@@ -119,23 +129,53 @@ function createBoard(gameCards) {
           
 }
 shuffleCards(gameCards); 
-
-function flipCard(card) {
-    //Flip card
-    if(lockBoard)
-    return;
-    card.classList.add('flip');
-    card.classList.add('card-front');
-    flipCounter += 1;
-    card.src = card.getAttribute('data-path');
-    let cardName = card.getAttribute('data-name');
-
-    if(parseInt(flipCounter === 1)) {
-        currentName = cardName;
-        return;
-};
-}
-
 createBoard(gameCards);
 
+
+
+ 
+function flipCard(card) {
+    //Flip card
+    card.classList.add('flip', 'card-front', 'card-back');
+ //  if (flipCounter < 3); {
+  //     flipCounter++;
+ // }
+    card.src = card.getAttribute('data-path');
+ //  let cardName = card.getAttribute('data-name');
+  if(flipCounter === maxFlip){
+      setTimeout(checkForMatch, 500);
+  }
+};
+
+function checkForMatch(card) {
+    card.src = card.getAttribute('data-path');
+    let cardName = card.getAttribute('data-name');
+     if(parseInt(flipCounter) === 1) {
+        currentName = cardName;
+       return; 
+
+     } else if (parseInt(flipCounter) === parseInt(maxFlip)) {
+        flipCounter = 0;
+      ///check if cards match and push matched cards to array
+     } else if (cardName === currentName) {
+         flipCounter = 0;
+         currentName = '';
+         matchedCards.push(card);
+         console.log(matchedCards);
+         //check if cards do not match
+         //reset flipcounter and currentName
+     } else if (flipCounter === maxFlip && cardName !== currentName) {
+          timeoutID = window.setTimeout(function (){
+          let images = document.querySelectorAll(`[data-name*="${currentName}"]`);
+          images.forEach(img => {
+          img.src = defaultImage;
+          });
+          flipCounter = 0;
+          currentName = '';
+          card.src = defaultImage;
+          clearTimeout(timeoutID);
+          }, 1500) 
+     };
+      unFlip();
+    }
 });
