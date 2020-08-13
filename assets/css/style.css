@@ -2,7 +2,6 @@ body {
     box-sizing: border-box;
 }
 
-.start-overlay,
 .win-overlay,
 .lose-overlay {
 position: fixed;
@@ -24,21 +23,25 @@ cursor: pointer;
 
 #grid {
 display: grid;
+grid-template-columns: repeat(6, auto);
+grid-gap: 2px;
+justify-content: center;
 perspective: 1000px;
 }
 
+
 .card {
-  width: 130px;
-  height: 130px;
+  height: 125px;
+  width: 125px;
   display: flex;
   justify-content: center;
   align-items: center;
-  backface-visibility: hidden;
+ /* backface-visibility: hidden; */
   border-radius: 5px;
   border: 2px solid lime; 
   transform: scale(1);
   transform-style: preserve-3d;
-  transition: .3s;
+  transition: transform .4s ease-in-out;
 }
 
 .card:active {
@@ -49,7 +52,13 @@ perspective: 1000px;
 .card.flip {
     transform: rotateY(180deg);
 }
-
+.card-front,
+.card-back {
+    width: 125px;
+    height: 125px;
+   /* backface-visibility: hidden; */
+}
 .card-front {
     transform: rotateY(180deg);
-}
+} 
+
