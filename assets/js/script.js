@@ -75,16 +75,23 @@ const defaultImage = 'assets/images/ireland.jpg',
             name: 'lake',
             img: 'assets/images/lake.jpg'
         }
-    ];
+    ],
+    gameWin = document.querySelector('win-overlay'),
+    gameOver = document.querySelector('lose-overlay'),
+    clickCounter = document.querySelector('click-counter');
+
 
 let gameCards = [...cardList, ...cardList],
 lockBoard = false,
 clickedCards = [],
 flipCounter = 0,
-matchedCards = [];
+matchedCards = [],
+clicks = 0;
+
+
 
 // function from stack overflow
-function timer(duration, display) {
+function timer(duration,display) {
     let timer = duration, minutes, seconds;
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
@@ -95,24 +102,38 @@ function timer(duration, display) {
 
         display.textContent = minutes + ":" + seconds;
 
-        if (--timer < 0) {
-            timer = duration;
-        }
+       // if (--timer < 0) {
+        //    timer = duration;
+      //  }
+    
     }, 1000);
+     //stop timer when it reaches 0
+   //  if (minutes === 0 && seconds === 0) {
+  //       return;
+  //   }
 }
 
 //turn this into startTimer function
+//start timer on first card click
 window.onclick = (function (e) {
-let firstClick = 0;
+   let firstClick = 0;
    let card = document.createElement('img');
    e.target = card;
    if (firstClick === 1){
+       firstClick++;
      e.target.removeAttribute('onclick');
    }
     let timeRemaining = 60 * 2,
    display = document.querySelector('#timer');
    timer(timeRemaining, display);
+    
 });
+
+//increment flip counter with every card click
+function flipCount(clicks) {
+           clicks++;
+           clickCounter.innerHTML = clicks;
+    };   
 
 
 function shuffleCards(array) {
@@ -210,4 +231,25 @@ function checkForMatch(card) {
      };
       
     }
+
+  function loseGame(){
+      if(matchedCards.length < gameCards.length && timer === 0) {
+          return 
+          gameOver;
+      }
+      resetGame()
+  }  
+
+ function winGame(){
+    if (matchedCards.length === gameCards.length && timer > 0) {
+        return
+       winGame();
+    }
+   resetGame();
+ }
+
+  function resetGame() {
+     shuffleCards(gameCards); 
+     createBoard(gameCards);
+ }
 });
