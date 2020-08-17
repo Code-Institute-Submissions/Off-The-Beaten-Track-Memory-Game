@@ -86,12 +86,12 @@ lockBoard = false,
 clickedCards = [],
 flipCounter = 0,
 matchedCards = [],
-clicks = 0;
-
+clicks = 0,
+timeRemaining;
 
 
 // function from stack overflow
-function timer(duration,display) {
+function gameTimer(duration,display) {
     let timer = duration, minutes, seconds;
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
@@ -102,31 +102,26 @@ function timer(duration,display) {
 
         display.textContent = minutes + ":" + seconds;
 
-       // if (--timer < 0) {
-        //    timer = duration;
-      //  }
-    
+        if (--timer < 0) {
+            timer = duration;
+       } clearTimeout(timer)
     }, 1000);
-     //stop timer when it reaches 0
-   //  if (minutes === 0 && seconds === 0) {
-  //       return;
-  //   }
+    
 }
 
 //turn this into startTimer function
 //start timer on first card click
 window.onclick = (function (e) {
    let firstClick = 0;
+   firstClick++;
    let card = document.createElement('img');
    e.target = card;
    if (firstClick === 1){
-       firstClick++;
-     e.target.removeAttribute('onclick');
-   }
-    let timeRemaining = 60 * 2,
+    card.removeAttribute('onclick');
+   }    //Fix time!!
+    let timeRemaining = 60 / 10,
    display = document.querySelector('#timer');
-   timer(timeRemaining, display);
-    
+   gameTimer(timeRemaining, display);   
 });
 
 //increment flip counter with every card click
@@ -152,18 +147,7 @@ function shuffleCards(array) {
     }
 };
 
-function unFlip(PreviousCard, CurrentCard) {
-        let previousCard = document.querySelectorAll(`[data-name="${PreviousCard}"]`)[0];
-        let currentCard = document.querySelectorAll(`[data-name="${CurrentCard}"]`)[0];
 
-        currentCard.setAttribute('data-name', CurrentCard);
-        currentCard.setAttribute('data-path', currentCard.src);
-        currentCard.setAttribute('src', defaultImage);
-
-        previousCard.setAttribute('data-name', PreviousCard);
-        previousCard.setAttribute('data-path', previousCard.src);
-        previousCard.setAttribute('src', defaultImage);
-}
 
 function createBoard(gameCards) {
     const grid = document.getElementById('grid');
@@ -198,6 +182,7 @@ function flipCard(card) {
   if(flipCounter === maxFlip){
       setTimeout(checkForMatch, 500);
   }
+ // flipCount();
 };
 
 function checkForMatch(card) {
@@ -222,33 +207,49 @@ function checkForMatch(card) {
           let images = document.querySelectorAll(`[data-name*="${currentName}"]`);
           images.forEach(img => {
           img.src = defaultImage;
-          }); unFlip();
+          }); 
           flipCounter = 0;
           currentName = '';
           card.src = defaultImage;
           clearTimeout(timeoutID), unFlip();
           }, 1500) 
      };
-      
+    // unFlip();
     }
 
-  function loseGame(){
-      if(matchedCards.length < gameCards.length && timer === 0) {
-          return 
+    function unFlip(PreviousCard, CurrentCard) {
+        let previousCard = document.querySelectorAll(`[data-name="${PreviousCard}"]`)[0];
+        let currentCard = document.querySelectorAll(`[data-name="${CurrentCard}"]`)[0];
+
+        currentCard.setAttribute('data-name', CurrentCard);
+        currentCard.setAttribute('data-path', currentCard.src);
+        currentCard.setAttribute('src', defaultImage);
+
+        previousCard.setAttribute('data-name', PreviousCard);
+        previousCard.setAttribute('data-path', previousCard.src);
+        previousCard.setAttribute('src', defaultImage);
+};
+
+  (function loseGame(){
+      if(matchedCards.length < gameCards.length && timeRemaining === 0) { 
           gameOver;
+       document.getElementsByClassName('win-overlay').style.display = 'none';
+       document.getElementsByClassName('lose-overlay').style.display = 'block';
       }
       resetGame()
-  }  
+  }) ();  
 
- function winGame(){
-    if (matchedCards.length === gameCards.length && timer > 0) {
-        return
-       winGame();
+ (function winGame(){
+    if (matchedCards.length === gameCards.length && timeRemaining > 0) {
+       gameWin;
+       document.getElementsByClassName('win-overlay').style.display = 'block';
+       document.getElementsByClassName('lose-overlay').style.display = 'none';
     }
    resetGame();
- }
+ }) ();
 
   function resetGame() {
+      
      shuffleCards(gameCards); 
      createBoard(gameCards);
  }
