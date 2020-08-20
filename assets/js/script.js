@@ -89,8 +89,7 @@ function gameTimer(duration,display) {
 //turn this into startTimer function
 //start timer on first card click
   let gameBoard = document.querySelector('.board'); 
-  gameBoard.onclick = (function () {
-      
+  gameBoard.onclick = (function () {    
   let firstClick = 0;
    firstClick++;
   // let card = document.createElement('img');
@@ -98,20 +97,20 @@ function gameTimer(duration,display) {
    if (firstClick === 1){
     gameBoard.removeAttribute('onclick');
    }    //Fix time!!
-    let timeRemaining = 60 / 10,
+    let timeRemaining = 60 / 6,
    display = document.querySelector('#timer');
    gameTimer(timeRemaining, display);  
    //console.log(gameTimer(timeRemaining, display)) 
 });
 
 //increment flip counter with every card click
-function flipCount(clicks) {
-    let click = document.getElementsByClassName('clicker');
-    click.addEventListener('click', function(){
-           click++;
-           clickCounter.innerHTML = click;
-           });
-    };   
+//function flipCount(clicks) {
+//    let clicks = document.querySelector('.clicker');
+  //  click.addEventListener('click', function(){
+   //        clicks++;
+   //        clickCounter.innerHTML = parseInt(clicks);
+   //        });
+  //  };   
 
 
 function shuffleCards(array) {
@@ -162,30 +161,29 @@ function flipCard(card) {
  // }
     card.src = card.getAttribute('data-path');
  //  let cardName = card.getAttribute('data-name');
-  if(flipCounter === maxFlip){
-      setTimeout(checkForMatch, 500);
-  }
+ // if(flipCounter === maxFlip){
+      setTimeout(checkForMatch(card), 1000);
+ // }
  // flipCount();
 }; 
 
-    function checkForMatch(card) {
+   function checkForMatch(card) {
         card.src = card.getAttribute('data-path');
         let cardName = card.getAttribute('data-name');
+        flipCounter++;
         if (parseInt(flipCounter) === 1) {
             currentName = cardName;
             return;
-
-        } else if (parseInt(flipCounter) === parseInt(maxFlip)) {
-            flipCounter = 0;
-            ///check if cards match and push matched cards to array
-        } else if (cardName === currentName) {
+        }  
+        else if (cardName === currentName) {
             flipCounter = 0;
             currentName = '';
             matchedCards.push(card);
             console.log(matchedCards);
             //check if cards do not match
             //reset flipcounter and currentName
-        } else if (flipCounter === maxFlip && cardName !== currentName) {
+        } 
+        else if (flipCounter === maxFlip && cardName !== currentName) {
             timeoutID = window.setTimeout(function () {
                 let images = document.querySelectorAll(`[data-name*="${currentName}"]`);
                 images.forEach(img => {
@@ -194,16 +192,18 @@ function flipCard(card) {
                 flipCounter = 0;
                 currentName = '';
                 card.src = defaultImage;
-                clearTimeout(timeoutID), unFlip();
-            }, 1500)
-        };
-        // unFlip();
-    }
+                clearTimeout(timeoutID), unFlip(currentName, cardName);
+            }, 3000)
+        }
+    }; 
 
 
     function unFlip(PreviousCard, CurrentCard) {
         let previousCard = document.querySelectorAll(`[data-name="${PreviousCard}"]`)[0];
         let currentCard = document.querySelectorAll(`[data-name="${CurrentCard}"]`)[0];
+        
+      //  previousCard.classList.add('flip', 'card-back', 'card-front');
+      //  currentCard.classList.add('flip', 'card-back', 'card-front');
 
         currentCard.setAttribute('data-name', CurrentCard);
         currentCard.setAttribute('data-path', currentCard.src);
