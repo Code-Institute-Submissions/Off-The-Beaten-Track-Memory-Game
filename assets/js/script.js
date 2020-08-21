@@ -53,64 +53,60 @@ const defaultImage = 'assets/images/ireland.jpg',
         }
     ],
     gameWin = document.querySelector('win-overlay'),
-    gameOver = document.querySelector('lose-overlay'),
-    clickCounter = document.querySelector('click-counter');
+    gameOver = document.querySelector('lose-overlay');
+
 
 
 let gameCards = [...cardList, ...cardList],
-lockBoard = false,
 flipCounter = 0,
 matchedCards = [],
-clicks = 0,
-timeRemaining;
+timeRemaining,
+currentName = '',
+clickCounter = 0;
 
 
-// function from stack overflow
-function gameTimer(duration,display) {
-    let timer = duration, minutes, seconds;
-    
-    let id = setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
+//Function from Stack Overflow
+function gameTimer(duration, display) {
+    let start = Date.now(),
+        diff,
+        minutes,
+        seconds;
+    function timer() {
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
+        display.textContent = minutes + ":" + seconds; 
 
-       if (--timer < 0) { 
-           timer = duration;
-            clearTimeout(id);
-       } 
-    }, 1000);
-    
+        if (diff <= 0) {
+             start = Date.now() + 1000;
+         }
+    };
+       setInterval(timer, 1000);
+       timer();
 }
 
-//turn this into startTimer function
 //start timer on first card click
   let gameBoard = document.querySelector('.board'); 
-  gameBoard.onclick = (function () {    
-  let firstClick = 0;
-   firstClick++;
-  // let card = document.createElement('img');
-   //e.target = card;
-   if (firstClick === 1){
-    gameBoard.removeAttribute('onclick');
-   }    //Fix time!!
-    let timeRemaining = 60 / 6,
-   display = document.querySelector('#timer');
-   gameTimer(timeRemaining, display);  
-   //console.log(gameTimer(timeRemaining, display)) 
-});
+  gameBoard.onclick = (function () {
+      if (parseInt(flipCounter) < 2) {
+          gameBoard.removeAttribute('onclick');
+            let timeRemaining = 60 * 1.5,
+            display = document.querySelector('#timer');
+            gameTimer(timeRemaining, display);
+      }
+  })
+ 
 
 //increment flip counter with every card click
-//function flipCount(clicks) {
-//    let clicks = document.querySelector('.clicker');
-  //  click.addEventListener('click', function(){
-   //        clicks++;
-   //        clickCounter.innerHTML = parseInt(clicks);
-   //        });
-  //  };   
+function flipCount() {
+    clickCounter++;
+    let clickCount = document.querySelector('#flip-counter');
+    clickCount.textContent = clickCounter;
+};
 
 
 function shuffleCards(array) {
@@ -130,7 +126,7 @@ function shuffleCards(array) {
 };
 
 
-
+//populate game board
 function createBoard(gameCards) {
     const grid = document.getElementById('grid');
     gameCards.forEach(element => {
@@ -141,6 +137,7 @@ function createBoard(gameCards) {
         card.classList.add('card');
         card.onclick = function () {
            flipCard(this);
+           flipCount();
         };
         grid.appendChild(card);
         });   
@@ -154,6 +151,7 @@ createBoard(gameCards);
  
 function flipCard(card) {
     //Flip card
+    if (parseInt(flipCounter) < 2) {
     card.classList.add('flip', 'card-front', 'card-back');
  //Lock board when 2 cards have been flipped until unFlip runs
     //  if (flipCounter < 3); {
@@ -165,11 +163,17 @@ function flipCard(card) {
       setTimeout(checkForMatch(card), 1000);
  // }
  // flipCount();
+ }
 }; 
 
    function checkForMatch(card) {
         card.src = card.getAttribute('data-path');
         let cardName = card.getAttribute('data-name');
+        console.log("current name: " + currentName);
+        console.log("card name: " + cardName);
+        console.log("flipcounter: " + flipCounter);
+        console.log("Match card: " + matchedCards);
+
         flipCounter++;
         if (parseInt(flipCounter) === 1) {
             currentName = cardName;
@@ -202,8 +206,8 @@ function flipCard(card) {
         let previousCard = document.querySelectorAll(`[data-name="${PreviousCard}"]`)[0];
         let currentCard = document.querySelectorAll(`[data-name="${CurrentCard}"]`)[0];
         
-      //  previousCard.classList.add('flip', 'card-back', 'card-front');
-      //  currentCard.classList.add('flip', 'card-back', 'card-front');
+      //  previousCard.classList.add('card-back', 'card-front');
+      //  currentCard.classList.add('card-back', 'card-front');
 
         currentCard.setAttribute('data-name', CurrentCard);
         currentCard.setAttribute('data-path', currentCard.src);
