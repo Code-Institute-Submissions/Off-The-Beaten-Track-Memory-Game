@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let gameCards = [...cardList, ...cardList],
         flipCounter = 0,
+        firstClick = 0,
         matchedCards = [],
         timeRemaining,
         currentName = '',
@@ -68,34 +69,32 @@ document.addEventListener('DOMContentLoaded', () => {
     //bug back in game timer!!
     //Function from Stack Overflow
     function gameTimer(duration, display) {
-        let start = Date.now(),
-            diff,
-            minutes,
-            seconds;
+        let timer = duration,
+            minutes, seconds;
 
-        function timer() {
-            diff = duration - (((Date.now() - start) / 1000) | 0);
-            minutes = (diff / 60) | 0;
-            seconds = (diff % 60) | 0;
+        let id = setInterval(function() {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
 
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
 
             display.textContent = minutes + ":" + seconds;
 
-            if (diff <= 0) {
-                start = Date.now() + 1000;
+            if (--timer < 0) {
+                timer = duration;
+                clearTimeout(id);
             }
-        };
-        setInterval(timer, 1000);
-        timer();
-    };
+        }, 1000);
+    }
+
 
 
     //start timer on first card click
     let gameBoard = document.querySelector('.board');
     gameBoard.onclick = (function() {
-        if (parseInt(flipCounter) < 2) {
+        firstClick++
+        if (parseInt(firstClick) < 2) {
             gameBoard.removeAttribute('onclick');
             let timeRemaining = 60 / 4,
                 display = document.querySelector('#timer');
