@@ -5,12 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://use.fontawesome.com/0cd8b7f464.js"></script>
-    <script>
-        Set - Cookie: third_party_var = "value";
-        SameSite = "None";
-        Secure;
-    </script>
+    <script src="https://kit.fontawesome.com/067e5a2c50.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <title>Off The Beaten Track</title>
 </head>
@@ -21,7 +16,7 @@
             <h2 class="win-title">
                 Congratulations!</h2>
             <div class="btn-container">
-                <button class="play-again-btn" onclick="resetGame()">Play Again</button>
+                <button id="resetBtn1" class="play-again-btn" onclick="resetGame()">Play Again</button>
                 <button class="home">Home</button>
             </div>
         </div>
@@ -29,7 +24,7 @@
             <h2 class="lose-title">
                 Game Over</h2>
             <div class="btn-container">
-                <button class="play-again-btn" onclick="resetGame()">Play Again</button>
+                <button id="resetBtn2" class="play-again-btn" onclick="resetGame()">Play Again</button>
                 <button class="home">Home</button>
             </div>
         </div>
@@ -40,7 +35,7 @@
             <div class="game-counter">
                 Flips: <span id="flip-counter"> 0</span>
             </div>
-            <div><button class="restart-btn" onclick="resetGame()"><i class="fa fa-redo"></i></button></div>
+            <div><button id="resetBtn3" class="restart-btn" onclick="resetGame()"><i class="fa fa-redo"></i></button></div>
             <div><button class="home-btn"><a href="index.html"><i class="fa fa-home"></i></a></button></div>
         </div>
         <div id="grid" class="board">
@@ -49,7 +44,6 @@
     <script src="assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 
