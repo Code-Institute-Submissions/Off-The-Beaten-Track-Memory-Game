@@ -51,9 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 img: 'assets/images/lake.jpg'
             }
         ];
-    // gameWin = document.querySelector('win-overlay'),
-    //  gameOver = document.querySelector('lose-overlay');
-
 
 
     let gameCards = [...cardList, ...cardList],
@@ -65,8 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
         clickCounter = 0,
         previousImageId = 0;
 
+    document.getElementById("resetBtn1").addEventListener("click", resetGame, false);
+    document.getElementById("resetBtn2").addEventListener("click", resetGame, false);
+    document.getElementById("resetBtn3").addEventListener("click", resetGame, false);
 
-    //bug back in game timer!!
+
     //Function from Stack Overflow
     function gameTimer(duration, display) {
         let timer = duration,
@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             display.textContent = minutes + ":" + seconds;
 
-            if (--timer < 0) {
+            if (timer-- <= 0) {
+                loseGame(timer);
                 timer = duration;
                 clearTimeout(id);
             }
@@ -89,14 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-
     //start timer on first card click
+    //remove onclick after first card is clicked
     let gameBoard = document.querySelector('.board');
     gameBoard.onclick = (function() {
         firstClick++
         if (parseInt(firstClick) < 2) {
             gameBoard.removeAttribute('onclick');
-            let timeRemaining = 60 / 4,
+            timeRemaining = 60 * 1.5,
                 display = document.querySelector('#timer');
             gameTimer(timeRemaining, display);
         };
@@ -186,49 +187,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentName = '';
             }, 2000)
         };
+
+        if (matchedCards.length === 1 && timeRemaining > 0 && clickCounter < 98) {
+            document.getElementsByClassName('win-overlay')[0].style.display = 'block';
+            document.getElementsByClassName('lose-overlay')[0].style.display = 'none';
+        }
     };
 
-    // 3d flip needs to be fixed
     function unFlip(PreviousCard, CurrentCard) {
         let previousCard = document.querySelectorAll(`[id="${PreviousCard}"]`)[0];
         let currentCard = document.querySelectorAll(`[id="${CurrentCard}"]`)[0];
 
-        previousCard.classList.add('card-back', 'card-front', 'flip');
-        currentCard.classList.add('card-back', 'card-front', 'flip');
+        previousCard.classList.remove('card-back', 'card-front', 'flip');
+        currentCard.classList.remove('card-back', 'card-front', 'flip');
 
-        currentCard.setAttribute('data-name', CurrentCard);
+        currentCard.setAttribute('data-name', currentCard.getAttribute("data-name"));
         currentCard.setAttribute('data-path', currentCard.src);
         currentCard.setAttribute('src', defaultImage);
 
-        previousCard.setAttribute('data-name', PreviousCard);
+        previousCard.setAttribute('data-name', previousCard.getAttribute("data-name"));
         previousCard.setAttribute('data-path', previousCard.src);
         previousCard.setAttribute('src', defaultImage);
     };
 
-    (function loseGame() {
-        if (matchedCards.length < gameCards.length && timeRemaining === 0 || flipCounter === 98) {
-            //   gameOver;
-            document.getElementsByClassName('win-overlay').style.display = 'none';
-            document.getElementsByClassName('lose-overlay').style.display = 'block';
+    function loseGame(timeRemaining) {
+        if (matchedCards.length < gameCards.length && timeRemaining <= 0 || clickCounter === 98) {
+            document.getElementsByClassName('win-overlay')[0].style.display = 'none';
+            document.getElementsByClassName('lose-overlay')[0].style.display = 'block';
         }
-        resetGame()
-    })();
+    };
 
-    (function winGame() {
-        if (matchedCards.length === gameCards.length && timeRemaining > 0 && flipCounter < 98) {
-            // gameWin;
-            document.getElementsByClassName('win-overlay').style.display = 'block';
-            document.getElementsByClassName('lose-overlay').style.display = 'none';
-        }
-        resetGame();
-    })();
-
+    //clickcounter not reseting to zero until first card is clicked
     function resetGame() {
+        document.getElementsByClassName('win-overlay')[0].style.display = 'none';
+        document.getElementsByClassName('lose-overlay')[0].style.display = 'none';
         flipCounter = 0;
         currentName = '';
         clickCounter = 0;
         previousImageId = 0;
         matchedCards = [];
+        timeRemaining = 0;
         shuffleCards(gameCards);
         // createBoard(gameCards);
     }
