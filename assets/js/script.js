@@ -62,9 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
         clickCounter = 0,
         previousImageId = 0;
 
-    document.getElementById("resetBtn1").addEventListener("click", resetGame, false);
-    document.getElementById("resetBtn2").addEventListener("click", resetGame, false);
-    document.getElementById("resetBtn3").addEventListener("click", resetGame, false);
+
+    document.getElementById('resetBtn1').addEventListener('click', resetGame, false);
+    document.getElementById('resetBtn2').addEventListener('click', resetGame, false);
+    document.getElementById('resetBtn3').addEventListener('click', resetGame, false);
 
 
     //Function from Stack Overflow
@@ -97,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         firstClick++
         if (parseInt(firstClick) < 2) {
             gameBoard.removeAttribute('onclick');
-            timeRemaining = 60 * 1.5,
+            timeRemaining = 60 / 4,
                 display = document.querySelector('#timer');
             gameTimer(timeRemaining, display);
         };
@@ -144,13 +145,15 @@ document.addEventListener('DOMContentLoaded', () => {
             card.setAttribute('data-path', element.img);
             card.classList.add('card');
             card.onclick = function() {
-                flipCard(this);
-                flipCount();
+                //lock board when 2 cards havebeen flipped
+                if (flipCounter < 2) {
+                    flipCard(this);
+                    flipCount();
+                }
             };
             grid.appendChild(card);
             id++;
         });
-
     }
     shuffleCards(gameCards);
     createBoard(gameCards);
@@ -165,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //check if cards match
     function checkForMatch(card) {
+
         card.src = card.getAttribute('data-path');
         let cardName = card.getAttribute('data-name');
 
@@ -174,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentName = cardName;
             previousImgId = card.getAttribute('id');
             return;
+
         } else if (cardName === currentName) {
             flipCounter = 0;
             currentName = '';
@@ -187,13 +192,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentName = '';
             }, 2000)
         };
-
+        //change back to gameCards.length
+        //check if game is won
         if (matchedCards.length === 1 && timeRemaining > 0 && clickCounter < 98) {
             document.getElementsByClassName('win-overlay')[0].style.display = 'block';
             document.getElementsByClassName('lose-overlay')[0].style.display = 'none';
         }
     };
 
+    // if not a match flip cards back to starting position
     function unFlip(PreviousCard, CurrentCard) {
         let previousCard = document.querySelectorAll(`[id="${PreviousCard}"]`)[0];
         let currentCard = document.querySelectorAll(`[id="${CurrentCard}"]`)[0];
@@ -217,8 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    //clickcounter not reseting to zero until first card is clicked
-    function resetGame() {
+  function resetGame() {
         document.getElementsByClassName('win-overlay')[0].style.display = 'none';
         document.getElementsByClassName('lose-overlay')[0].style.display = 'none';
         flipCounter = 0;
@@ -227,7 +233,15 @@ document.addEventListener('DOMContentLoaded', () => {
         previousImageId = 0;
         matchedCards = [];
         timeRemaining = 0;
+        var node = document.getElementById('grid');
+        node.innerHTML = "";
         shuffleCards(gameCards);
-        // createBoard(gameCards);
+        createBoard(gameCards);
+        let clickCount = document.querySelector('#flip-counter');
+        clickCount.textContent = 0;
+        let timer = document.querySelector('#timer');
+        timer.textContent = "00:00";
+        clearInterval(timerId);
+        firstClick = 0;
     }
 });
