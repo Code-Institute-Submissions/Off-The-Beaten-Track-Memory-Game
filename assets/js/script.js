@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         timeRemaining,
         currentName = '',
         clickCounter = 98,
-        previousImageId = 0,
+        previousImgId = 0,
         timerId;
 
     document.getElementById("resetBtn1").addEventListener("click", resetGame, false);
@@ -86,19 +86,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 loseGame(timer);
                 timer = duration;
                 clearTimeout(timerId);
-            }
+            };
+            // stop timer if game is won
+            if (matchedCards.length === 1) {
+                clearTimeout(timerId);
+            };
         }, 1000);
     }
 
 
     //start timer on first card click
-    //remove onclick after first card is clicked
     let gameBoard = document.querySelector('.board');
     gameBoard.onclick = (function() {
         firstClick++
+        //remove onclick after first card is clicked
         if (parseInt(firstClick) < 2) {
             gameBoard.removeAttribute('onclick');
-            timeRemaining = 60 * 1.5,
+            timeRemaining = 60 * 2,
                 display = document.querySelector('#timer');
             gameTimer(timeRemaining, display);
         };
@@ -109,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function flipCount() {
         clickCounter--;
         let clickCount = document.querySelector('#flip-counter');
-        clickCount.textContent = '' + clickCounter;
+        clickCount.textContent = clickCounter;
     };
 
 
@@ -195,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //check if game is won , display win overlay
         if (matchedCards.length === 1 && timeRemaining > 0 && clickCounter > 0) {
             document.getElementsByClassName('win-overlay')[0].style.display = 'block';
-        }
+        };
     };
 
 
@@ -244,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let clickCount = document.querySelector('#flip-counter');
         clickCount.textContent = 98;
         let timer = document.querySelector('#timer');
-        timer.textContent = ' 00:00';
+        timer.textContent = '00:00';
         clearInterval(timerId);
     }
 });
