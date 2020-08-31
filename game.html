@@ -6,39 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/067e5a2c50.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <title>Off The Beaten Track</title>
 </head>
+
 
 <body>
     <div class="game-container-fluid">
         <div class="win-overlay">
             <h2 class="win-title">
-                Congratulations!</h2>
+                YOU WIN!</h2>
+            <div class="star-eyes">
+                <i class="far fa-grin-stars"></i><i class="far fa-grin-stars"></i>
+                <i class="far fa-grin-stars"></i><i class="far fa-grin-stars"></i>
+                <i class="far fa-grin-stars"></i><i class="far fa-grin-stars"></i>
+            </div>
             <div class="btn-container">
-                <button id="resetBtn1" class="play-again-btn" onclick="resetGame()">Play Again</button>
-                <button class="home">Home</button>
+                <button id="resetBtn1" class="play-again-btn hvr-pulse-grow">Play Again</button>
+                <button class="hvr-pulse-grow btn-home">Home</button>
             </div>
         </div>
         <div class="lose-overlay">
             <h2 class="lose-title">
-                Game Over</h2>
+                GAME OVER</h2>
+            <div class="sad-face hvr-icon-wobble-vertical">
+                <i class="far fa-sad-cry hvr-icon"></i><i class="far fa-sad-cry hvr-icon"></i>
+                <i class="far fa-sad-cry hvr-icon"></i><i class="far fa-sad-cry hvr-icon"></i>
+                <i class="far fa-sad-cry hvr-icon"></i><i class="far fa-sad-cry hvr-icon"></i>
+            </div>
             <div class="btn-container">
-                <button id="resetBtn2" class="play-again-btn" onclick="resetGame()">Play Again</button>
-                <button class="home">Home</button>
+                <button id="resetBtn2" class="play-again-btn hvr-pulse-grow">Play Again</button>
+                <button class="home hvr-pulse-grow btn-home">Home</button>
             </div>
         </div>
         <div class="game-info-container">
             <div class="game-timer">
-                Time:<span id="timer"> 00:00</span>
+                Time: <span id="timer"> 00:00</span>
             </div>
             <div class="game-counter">
-                Flips: <span id="flip-counter"> 0</span>
+                Flips: <span id="flip-counter"> 98</span>
             </div>
-            <div><button id="resetBtn3" class="restart-btn" onclick="resetGame()"><i class="fa fa-redo"></i></button></div>
+            <div><button id="resetBtn3" class="restart-btn"><i class="fa fa-redo"></i></button></div>
             <div><button class="home-btn"><a href="index.html"><i class="fa fa-home"></i></a></button></div>
         </div>
         <div id="grid" class="board">
+        </div>
+        <div class="game-footer">
+            <footer>
+                <p class="text-center small"> &#169; 2020 Aine O Neill All Rights Reserved</p>
+            </footer>
         </div>
     </div>
     <script src="assets/js/script.js"></script>
