@@ -1,37 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/067e5a2c50.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <title>Document</title>
 </head>
+
 <body>
-    <section class="landing-page text-center">
- <div class="opaque-overlay"> </div> 
- <div class="row">
- <div class="col">
-   <div class="intro">
-   <h1 class="page-title">Off The Beaten Track</h1>
-   <h2 class="subtitle">Memory Game</h2>
-   </div>
-   </div>
-   </div>
-     <div class="row">
-     <div class="col">
-     <div>
-     <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-     Tempora beatae ea natus fugiat, deserunt doloremque nihil. Eos maxime minus id ipsam enim 
-     temporibus sed officia debitis, laudantium repellat, ut laborum.</p>
-     </div>
-     <div>
-     <button class="instructions text-overlay">How to Play</button>
-     <button class="start-game "><a href="game.html"> Start Game </a></button>
-     </div>
-     </div>
-     </div>
-</section>
+    <section class="home-container-fluid text-center">
+        <div class="row">
+            <div class="col">
+                <div class="intro">
+                    <h1 class="page-title">Off The Beaten Track</h1>
+                    <h2 class="subtitle">Memory Game</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="welcome-text">
+                    <p> Welcome to <em><strong>Off The Beaten Track</strong></em>, a card matching memory game.
+                        Match your way around Ireland with beautiful images highlighting some of the hidden gems of our majestic landscape.
+                        From ancient structures to stunning coastlines, take a peak at some of the wonders of the Emerald Isle!
+                    </p>
+                </div>
+                <div>
+                    <button class="play-btn  hvr-pulse-grow" type="button" data-toggle="modal" data-target="#instructionsModal">How to Play</button>
+                    <button class="start-btn  hvr-pulse-grow"><a href="game.html"> Start Game </a></button>
+                </div>
+            </div>
+        </div>
+
+        <!--instructions modal-->
+        <div class="modal" tabindex="-1" role="dialog" id="instructionsModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            How To Play
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="rules" style="list-style-type:none;">
+                            <li><i class="fa fa-star"></i> Find all the matching pairs before the time runs out!</li>
+                            <li><i class="fa fa-star"></i> You have 2 minutes and 98 flips to find them all! </li>
+                        </ul>
+                        <button type="button" class="modal-btn hvr-pulse-grow"><a href="game.html">Lets Play!</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--footer-->
+        <div class="home-footer">
+            <footer>
+                <p class="text-center small footer-text"> copyright &copy; <span class="date"> </span> Aine O Neill All Rights Reserved</p>
+            </footer>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
+
 </html>
