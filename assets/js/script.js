@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultImage = 'assets/images/ireland.jpg',
         maxFlip = 2,
         cardList = [{
-                name: 'waterfall',
-                img: 'assets/images/waterfall.jpg'
+                name: 'pink',
+                img: 'assets/images/pink_mountain.jpg'
             },
             {
-                name: 'beach',
-                img: 'assets/images/donegal_beach.jpg'
+                name: 'killory',
+                img: 'assets/images/killory.jpg'
             },
             {
                 name: 'island',
@@ -31,24 +31,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 img: 'assets/images/dolmen.jpg'
             },
             {
-                name: 'forty',
-                img: 'assets/images/forty_foot.jpg'
+                name: 'sand_dune',
+                img: 'assets/images/sand_dune.jpg'
             },
             {
-                name: 'breeches',
-                img: 'assets/images/the_breeches.jpg'
+                name: 'dogs_bay',
+                img: 'assets/images/dogs_bay.jpg'
             },
             {
-                name: 'bective',
-                img: 'assets/images/bective.jpg'
+                name: 'sky-road',
+                img: 'assets/images/sky_road.jpg'
             },
             {
-                name: 'letterfrack',
-                img: 'assets/images/cliff.jpg'
+                name: 'moher',
+                img: 'assets/images/moher.jpg'
             },
             {
-                name: 'lake',
-                img: 'assets/images/lake.jpg'
+                name: 'horse',
+                img: 'assets/images/horse.jpg'
             }
         ];
 
@@ -63,9 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
         previousImgId = 0,
         timerId;
 
-    document.getElementById("resetBtn1").addEventListener("click", resetGame, false);
-    document.getElementById("resetBtn2").addEventListener("click", resetGame, false);
-    document.getElementById("resetBtn3").addEventListener("click", resetGame, false);
+    document.getElementById('resetBtn1').addEventListener('click', resetGame, false);
+    document.getElementById('resetBtn2').addEventListener('click', resetGame, false);
+    document.getElementById('resetBtn3').addEventListener('click', resetGame, false);
+
+    //dynamically set copyright date
+    const date = document.querySelectorAll('.date');
+    date.innerHTML = new Date().getFullYear();
 
 
     //Function from Stack Overflow
@@ -86,11 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 loseGame(timer);
                 timer = duration;
                 clearTimeout(timerId);
-            };
+            }
             // stop timer if game is won
-            if (matchedCards.length === 1) {
+            if (matchedCards.length === gameCards.length) {
                 clearTimeout(timerId);
-            };
+            }
         }, 1000);
     }
 
@@ -105,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timeRemaining = 60 * 2,
                 display = document.querySelector('#timer');
             gameTimer(timeRemaining, display);
-        };
+        }
     });
 
 
@@ -114,26 +118,26 @@ document.addEventListener('DOMContentLoaded', () => {
         clickCounter--;
         let clickCount = document.querySelector('#flip-counter');
         clickCount.textContent = clickCounter;
-    };
+    }
 
-
+    //Fisher-Yates shuffle from Stack Overflow
     //randomize cards
     function shuffleCards(array) {
-        let arr_len = array.length - 1,
+        let shuffledCards = array.length - 1,
             temp, index;
 
-        while (arr_len > 0) {
+        while (shuffledCards > 0) {
             // Set random index
-            index = Math.floor(Math.random() * arr_len);
-            // decrease the array_length by 1
-            arr_len--;
+            index = Math.floor(Math.random() * shuffledCards);
+            // decrease the array length by 1
+            shuffledCards--;
 
             // Perform swap
-            temp = array[arr_len];
-            array[arr_len] = array[index];
+            temp = array[shuffledCards];
+            array[shuffledCards] = array[index];
             array[index] = temp;
         }
-    };
+    }
 
 
     //populate game board
@@ -154,12 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     flipCard(this);
                     flipCount();
                 }
-            };
+            }
             grid.appendChild(card);
             id++;
         });
-
     }
+
     shuffleCards(gameCards);
     createBoard(gameCards);
 
@@ -169,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.classList.add('flip', 'card-front', 'card-back');
         card.src = card.getAttribute('data-path');
         setTimeout(checkForMatch(card), 1000);
-    };
+    }
 
 
     //check if cards match
@@ -186,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (cardName === currentName) {
             flipCounter = 0;
             currentName = '';
-            matchedCards.push(card);
+            matchedCards.push(card, currentName);
             //check if cards do not match
             //reset flip-counter and currentName
         } else if (flipCounter === maxFlip && cardName !== currentName) {
@@ -195,14 +199,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 flipCounter = 0;
                 currentName = '';
             }, 2000)
-        };
+        }
         //check if game is won , display win overlay
-        if (matchedCards.length === 1 && timeRemaining > 0 && clickCounter > 0) {
+        if (matchedCards.length === gameCards.length && timeRemaining > 0 && clickCounter > 0) {
             document.getElementsByClassName('win-overlay')[0].style.display = 'block';
-        };
-    };
+        }
+    }
 
-
+    console.log(matchedCards);
+    console.log(gameCards);
     //if cards do not match, return to starting position
     function unFlip(PreviousCard, CurrentCard) {
         let previousCard = document.querySelectorAll(`[id='${PreviousCard}']`)[0];
@@ -218,15 +223,16 @@ document.addEventListener('DOMContentLoaded', () => {
         previousCard.setAttribute('data-name', previousCard.getAttribute('data-name'));
         previousCard.setAttribute('data-path', previousCard.src);
         previousCard.setAttribute('src', defaultImage);
-    };
+    }
+
 
     function loseGame(timeRemaining) {
         if (matchedCards.length < gameCards.length && timeRemaining <= 0 || clickCounter === 0) {
             document.getElementsByClassName('lose-overlay')[0].style.display = 'block';
         }
-    };
+    }
 
-
+    //reset the board on button click
     function resetGame() {
         document.getElementsByClassName('win-overlay')[0].style.display = 'none';
         document.getElementsByClassName('lose-overlay')[0].style.display = 'none';
@@ -251,4 +257,5 @@ document.addEventListener('DOMContentLoaded', () => {
         timer.textContent = '00:00';
         clearInterval(timerId);
     }
+
 });
