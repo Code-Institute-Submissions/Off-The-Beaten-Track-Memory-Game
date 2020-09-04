@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="memory game, card matching game">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/067e5a2c50.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" />
@@ -48,8 +52,8 @@
         <!--game stats-->
         <div class="game-info-container">
             <div class="icon-container">
-                <div><button id="resetBtn3" class="restart-btn"><i class="fa fa-redo"></i></button></div>
-                <div><button class="home-btn"><a href="index.html"><i class="fa fa-home"></i></a></button></div>
+                <div><button id="resetBtn3" class="restart-btn" aria-label="restart"><i class="fa fa-redo"></i></button></div>
+                <div><button class="home-btn" aria-label="home"><a href="index.html"><i class="fa fa-home"></i></a></button></div>
             </div>
             <div class="game-counter">
                 Flips: <span id="flip-counter"> 98</span>
@@ -66,7 +70,8 @@
         <!--footer-->
         <div class="game-footer">
             <footer>
-                <p class="text-center small footer-text"> copyright &copy; <span class="date"> </span> Aine O Neill All Rights Reserved</p>
+                <p class="text-center small footer-text"> copyright &copy; <span class="date"> </span>
+                    <span class="name">AO Games</span>. All Rights Reserved</p>
             </footer>
         </div>
     </div>
