@@ -1,12 +1,12 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Uncial+Antiqua&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Alata&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@400;500;600;700&display=swap');
 
 body {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /*Home page*/
+
 .home-container-fluid {
     background: radial-gradient(#ffccff, #ff4cff);
     height: 100vh;
@@ -17,8 +17,113 @@ body {
     font-weight: bold;
     font-size: 5em;
     padding-top: 25px;
-    color: #004c00;
+    color: #00ff00;
+    text-shadow: -3px -3px 5px #004c00;
 }
+
+.subtitle {
+    font-family: 'Alata', sans-serif;
+    font-weight: bold;
+    font-size: 3em;
+    color: #00ff00;
+    text-shadow: -3px -3px 5px #004c00;
+}
+
+.welcome-text {
+    color: #005b00;
+    font-weight: 500;
+    font-size: 18px;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.play-btn,
+.start-btn {
+    margin-top: 25px;
+    border-radius: 7px;
+    height: 40px;
+    background-color: #00ff00;
+    color: #ff00ff;
+    border: 3px solid #00ff00;
+    font-weight: bold;
+    font-size: 1.25em;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.play-btn {
+    margin-right: 15px;
+}
+
+.start-btn {
+    text-decoration: none;
+}
+
+.start-btn a {
+    color: #ff00ff;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/*Modal*/
+
+.modal-header {
+    border-bottom: 1px solid #ff00ff;
+}
+
+.modal-title {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Alata', sans-serif;
+    font-size: 2em;
+    margin: auto;
+    color: #cc00cc;
+}
+
+.modal-title i {
+    text-shadow: -3px -3px 3px purple;
+    color: #ff00ff;
+}
+
+.modal-content {
+    text-align: center;
+    background: radial-gradient(#99ff99, #98e070);
+    color: #ff00ff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+.rules {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.rules i {
+    color: #cc00cc;
+}
+
+.modal-btn {
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #cc00cc;
+    border-radius: 7px;
+    height: 40px;
+    border: 3px solid #ff00ff;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.modal-btn a {
+    color: #00ff00;
+}
+
 
 /*Overlays*/
 
@@ -51,22 +156,17 @@ body {
 }
 
 .lose-title {
-    color: #ff00ff;
+    color: #cc00cc;
 }
 
 .star-eyes,
-.sad-face{
-   font-size: 40px;
-   font-weight: bold;
-   display: flex;
-   justify-content: center;
-   margin-top: 25px;
-  
-}
-.fa-grin-stars,
-.fa-sad-cry {
-   margin-left: 2px;
-   margin-right: 2px;
+.sad-face {
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+
 }
 
 .fa-grin-stars {
@@ -79,21 +179,24 @@ body {
     margin-top: 50px;
 }
 
-
 .btn-home,
 .play-again-btn {
     border-radius: 7px;
     height: 40px;
     background-color: #ff00ff;
-    color:#00ff00;
-    border: 2px solid #00ff00;
-   /* font-family: 'Roboto', sans-serif; */
+    color: #00ff00;
+    border: 3px solid #ff00ff;
     font-weight: bold;
     font-size: 20px;
 }
 
-.btn-home{
+.btn-home {
     margin-left: 10px;
+    text-decoration: none;
+}
+
+.btn-home a {
+    color: #32ff32;
 }
 
 .play-again-btn {
@@ -101,11 +204,59 @@ body {
 }
 
 
+/*Animations*/
+.fa-star {
+    animation: pulse 1s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(.7);
+    }
+
+    50% {
+        transform: scale(1.2)
+    }
+
+    100% {
+        transform: scale(.7);
+    }
+}
+
+
+.fa-frown-open,
+.fa-grin-stars {
+    margin-left: 2px;
+    margin-right: 2px;
+    animation: spin 1s linear infinite;
+}
+
+.reverse {
+    animation: spin 1s linear infinite reverse;
+}
+
+@keyframes spin {
+
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-90deg);
+    }
+
+    75% {
+        transform: rotate(90deg);
+    }
+}
+
+
+
 /*Game Info*/
 
 .game-container-fluid {
     background: radial-gradient(#e0f3e0, #98e070);
-    /*color: #067906;*/
     color: #ff00ff;
     font-weight: 700;
 }
@@ -113,7 +264,6 @@ body {
 .game-info-container {
     grid-column: 1 / -1;
     display: flex;
-
 }
 
 .game-counter,
@@ -127,15 +277,21 @@ body {
 }
 
 .game-counter {
-    margin-left: 25px;
+    margin-left: 240px;
 }
 
 .game-timer {
-    margin-left: 260px;
+    margin-left: 120px;
+}
+
+.icon-container {
+    display: flex;
+    margin-left: 0;
+    padding-left: 20px;
 }
 
 .restart-btn {
-    margin-left: 360px;
+    margin-left: 45px;
 }
 
 .restart-btn,
@@ -145,6 +301,7 @@ body {
     border-color: #ff00ff;
     background-color: #ff00ff;
     color: #32ff32;
+    position: absolute;
 }
 
 .home-btn {
@@ -154,6 +311,8 @@ body {
 .home-btn a {
     color: #32ff32;
 }
+
+
 
 /*Game Board*/
 
@@ -178,6 +337,7 @@ body {
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .4s ease-in-out;
+    cursor: pointer;
 }
 
 .card:active {
@@ -200,17 +360,24 @@ body {
 }
 
 /*Footers*/
+
 .home-footer,
 .game-footer {
     position: absolute;
     height: 35px;
-    /*  background-color: #00ff00; */
-    color: #ff00ff;
     width: 100%;
 }
 
 .home-footer {
-    background-color: #004c00;
+    background-color: #32ff32;
+    color: #ff00ff;
+    bottom: 0;
+}
+
+.footer-text {
+    padding-top: 7px;
+    font-weight: bold;
+    margin: auto
 }
 
 .game-footer {
@@ -221,29 +388,31 @@ body {
 /*Media Queries*/
 
 @media only screen and (max-width: 700px) {
+
     .win-title,
     .lose-title {
         font-size: 5em;
     }
-    
+
     .game-info-container {
         display: flex;
-        justify-content: center;
         padding-top: 25px;
     }
 
+    .game-counter,
     .game-timer {
-        margin: 0;
+        margin-top: 0;
+        margin-bottom: 0;
         padding-right: 15px;
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .game-counter {
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: 15px;
-        padding-right: 15px;
-        font-size: 18px;
+        margin-left: 160px;
+    }
+
+    .game-timer {
+        margin-left: 25px;
     }
 
     .restart-btn,
@@ -252,15 +421,6 @@ body {
         margin-top: 0;
         margin-bottom: 0;
     }
-
-    .restart-btn {
-        margin-left: 20px;
-    }
-
-    .home-btn {
-        margin-left: 5px;
-    }
-
 
     #grid {
         margin-top: 10px;
