@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearTimeout(timerId);
             }
             // stop timer if game is won
-            if (matchedCards.length === gameCards.length) {
+            if (matchedCards.length === (gameCards.length / 2)) {
                 clearTimeout(timerId);
             }
         }, 1000);
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (cardName === currentName) {
             flipCounter = 0;
             currentName = '';
-            matchedCards.push(card, currentName);
+            matchedCards.push(card);
             //check if cards do not match
             //reset flip-counter and currentName
         } else if (flipCounter === maxFlip && cardName !== currentName) {
@@ -201,13 +201,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000)
         }
         //check if game is won , display win overlay
-        if (matchedCards.length === gameCards.length && timeRemaining > 0 && clickCounter > 0) {
+        if (matchedCards.length === (gameCards.length / 2) && timeRemaining > 0 && clickCounter > 0) {
             document.getElementsByClassName('win-overlay')[0].style.display = 'block';
         }
     }
 
-    console.log(matchedCards);
-    console.log(gameCards);
+
     //if cards do not match, return to starting position
     function unFlip(PreviousCard, CurrentCard) {
         let previousCard = document.querySelectorAll(`[id='${PreviousCard}']`)[0];
@@ -227,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function loseGame(timeRemaining) {
-        if (matchedCards.length < gameCards.length && timeRemaining <= 0 || clickCounter === 0) {
+        if (matchedCards.length < (gameCards.length / 2) && timeRemaining <= 0 || clickCounter === 0) {
             document.getElementsByClassName('lose-overlay')[0].style.display = 'block';
         }
     }
@@ -240,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         flipCounter = 0;
         currentName = '';
         clickCounter = 98;
-        previousImageId = 0;
+        previousImgId = 0;
         matchedCards = [];
         timeRemaining = 0;
         firstClick = 0;
