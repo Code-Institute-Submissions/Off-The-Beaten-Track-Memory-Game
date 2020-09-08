@@ -39,6 +39,10 @@ body {
     padding-right: 30px;
 }
 
+.btn {
+    padding: 0;
+}
+
 .play-btn,
 .start-btn {
     margin-top: 25px;
@@ -58,14 +62,17 @@ body {
 
 .start-btn {
     text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .start-btn a {
     color: #ff00ff;
 }
 
-a:hover {
+.start-btn:hover {
     text-decoration: none;
+    color: #ff00ff;
 }
 
 /*Modal*/
@@ -119,6 +126,12 @@ a:hover {
     font-family: 'Boogaloo', cursive;
     text-decoration: none;
     cursor: pointer;
+    color: #00ff00;
+}
+
+.modal-btn:hover {
+    color: #00ff00;
+    text-decoration: none;
 }
 
 .modal-btn a {
@@ -363,15 +376,16 @@ a:hover {
 
 .home-footer,
 .game-footer {
-    position: absolute;
     height: 35px;
     width: 100%;
 }
 
 .home-footer {
+    position: fixed;
     background-color: #32ff32;
     color: #ff00ff;
     bottom: 0;
+    left: 0;
 }
 
 .footer-text {
@@ -392,7 +406,7 @@ a:hover {
 
 /*Media Queries*/
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
 
     .win-title,
     .lose-title {
@@ -400,6 +414,7 @@ a:hover {
     }
 
     .page-title {
+        padding-top: 25px;
         font-size: 4em;
     }
 
@@ -444,23 +459,26 @@ a:hover {
     }
 
     .card {
-        max-height: 90px;
-        max-width: 90px;
+        max-height: 80px;
+        max-width: 80px;
         border: 2px solid #ff00ff;
     }
 
     .home-container-fluid {
         background: radial-gradient(#ffccff, #ff4cff);
-        /* height: 100%; */
     }
 
     .home-footer,
     .game-footer {
-        /* position: inherit; */
+        /*  position: inherit; */
         height: 35px;
         width: 100%;
+    }
+
+    .home-footer {
         bottom: 0;
     }
+
 
     .home-page-btn {
         position: relative;
@@ -469,5 +487,12 @@ a:hover {
 
     .hide {
         display: none;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    #grid {
+        grid-template-columns: repeat(8, auto);
+        grid-gap: 2px;
     }
 }
