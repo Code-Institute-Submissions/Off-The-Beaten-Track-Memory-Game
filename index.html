@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/067e5a2c50.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <title>Document</title>
@@ -34,7 +33,7 @@
                 </div>
                 <div class="home-page-btn">
                     <button class="play-btn  hvr-pulse-grow" type="button" data-toggle="modal" data-target="#instructionsModal">How to Play</button>
-                    <button class="start-btn  hvr-pulse-grow"><a href="game.html"> Start Game </a></button>
+                    <a class="start-btn  hvr-pulse-grow" href="game.html" role="button"> Start Game </a>
                 </div>
             </div>
         </div>
@@ -49,7 +48,7 @@
                             How To Play
                             <i class="fa fa-star hide"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                         </h4>
-                        <button type="button" class="close hvr-pulse-grow" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -57,8 +56,9 @@
                         <ul class="rules" style="list-style-type:none;">
                             <li><i class="fa fa-star"></i> Find all the matching pairs before the time runs out!</li>
                             <li><i class="fa fa-star"></i> You have 2 minutes and 98 flips to find them all! </li>
+                            <li><i class="fa fa-star"></i> Use the <i class="fa fa-redo"> </i> if you need to reset the board</li>
                         </ul>
-                        <button type="button" class="modal-btn hvr-pulse-grow"><a href="game.html">Lets Play!</a></button>
+                        <a class="modal-btn hvr-pulse-grow" href="game.html">Lets Play!</a>
                     </div>
                 </div>
             </div>
@@ -67,12 +67,12 @@
         <!--footer-->
         <div class="home-footer">
             <footer>
-                <p class="text-center small footer-text"> copyright &copy; <span class="date"> </span>
+                <p class="text-center small footer-text"> copyright &copy; 2020
                     <span class="name">AO Games</span>. All Rights Reserved</p>
             </footer>
         </div>
     </section>
-
+    <script src="https://kit.fontawesome.com/067e5a2c50.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
