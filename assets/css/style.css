@@ -16,8 +16,8 @@ body {
 .page-title {
     font-family: 'Boogaloo', cursive;
     font-weight: bold;
-    font-size: 6em;
-    padding-top: 25px;
+    font-size: 7em;
+    padding-top: 60px;
     color: #00ff00;
     text-shadow: -3px -3px 5px #004c00;
 }
@@ -28,24 +28,25 @@ body {
     font-size: 4em;
     color: #00ff00;
     text-shadow: -3px -3px 5px #004c00;
+    padding-bottom: 20px;
 }
 
 .welcome-text {
-    color: #005b00;
+    color: #260026;
     font-weight: 500;
     font-size: 18px;
-    padding-top: 25px;
+    padding-top: 40px;
     padding-left: 30px;
     padding-right: 30px;
 }
 
-.btn {
-    padding: 0;
+.home-page-btn {
+    padding-top: 30px;
 }
 
 .play-btn,
 .start-btn {
-    margin-top: 25px;
+    margin-top: 20px;
     border-radius: 7px;
     background-color: #00ff00;
     color: #ff00ff;
@@ -53,7 +54,8 @@ body {
     font-weight: bold;
     font-size: 1.75em;
     font-family: 'Boogaloo', cursive;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 150px;
 }
 
 .play-btn {
@@ -64,6 +66,7 @@ body {
     text-decoration: none;
     padding-left: 5px;
     padding-right: 5px;
+    text-align: center;
 }
 
 .start-btn a {
@@ -85,13 +88,13 @@ body {
     text-align: center;
     font-weight: bold;
     font-family: 'Boogaloo', cursive;
-    font-size: 2em;
+    font-size: 2.25em;
     margin: auto;
     color: #cc00cc;
 }
 
 .modal-title i {
-    text-shadow: -3px -3px 3px purple;
+    text-shadow: -3px -3px 3px #800080;
     color: #ff00ff;
 }
 
@@ -127,6 +130,7 @@ body {
     text-decoration: none;
     cursor: pointer;
     color: #00ff00;
+    width: 90px;
 }
 
 .modal-btn:hover {
@@ -202,15 +206,24 @@ body {
     font-size: 24px;
     font-family: 'Boogaloo', cursive;
     cursor: pointer;
+    width: 110px;
 }
 
 .btn-home {
     margin-left: 10px;
     text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
 }
 
 .btn-home a {
-    color: #32ff32;
+    color: #00ff00;
+}
+
+.btn-home:hover {
+    text-decoration: none;
+    color: #00ff00;
 }
 
 .play-again-btn {
@@ -273,11 +286,13 @@ body {
     background: radial-gradient(#e0f3e0, #98e070);
     color: #ff00ff;
     font-weight: 700;
+    height: 100vh;
 }
 
 .game-info-container {
     grid-column: 1 / -1;
     display: flex;
+    padding-top: 25px;
 }
 
 .game-counter,
@@ -319,6 +334,11 @@ body {
     cursor: pointer;
 }
 
+.fa-home {
+    font-size: 22px;
+    padding: 4px;
+}
+
 .home-btn {
     margin-left: 5px;
 }
@@ -333,15 +353,16 @@ body {
 #grid {
     display: grid;
     grid-template-columns: repeat(6, auto);
-    grid-gap: 5px;
+    grid-gap: 7px;
     justify-content: center;
     perspective: 1000px;
     padding-bottom: 20px;
+    padding-top: 25px;
 }
 
 .card {
-    height: 125px;
-    width: 125px;
+    height: 130px;
+    width: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -376,16 +397,16 @@ body {
 
 .home-footer,
 .game-footer {
+    position: fixed;
     height: 35px;
     width: 100%;
+    bottom: 0;
+    left: 0;
 }
 
 .home-footer {
-    position: fixed;
-    background-color: #32ff32;
+    background-color: #00ff00;
     color: #ff00ff;
-    bottom: 0;
-    left: 0;
 }
 
 .footer-text {
@@ -406,11 +427,12 @@ body {
 
 /*Media Queries*/
 
+
+/*mobile screens*/
 @media only screen and (max-width: 600px) {
 
-    .win-title,
-    .lose-title {
-        font-size: 5em;
+    .home-container-fluid {
+        background: radial-gradient(#ffccff, #ff4cff);
     }
 
     .page-title {
@@ -420,6 +442,12 @@ body {
 
     .welcome-text {
         font-size: 14px;
+        padding-top: 25px;
+    }
+
+    .win-title,
+    .lose-title {
+        font-size: 5em;
     }
 
     .game-info-container {
@@ -436,7 +464,7 @@ body {
     }
 
     .game-counter {
-        margin-left: 160px;
+        margin-left: 130px;
     }
 
     .game-timer {
@@ -448,7 +476,6 @@ body {
         border-radius: 50%;
         margin-top: 0;
         margin-bottom: 0;
-        font-size: 14px;
     }
 
     #grid {
@@ -464,13 +491,8 @@ body {
         border: 2px solid #ff00ff;
     }
 
-    .home-container-fluid {
-        background: radial-gradient(#ffccff, #ff4cff);
-    }
-
     .home-footer,
     .game-footer {
-        /*  position: inherit; */
         height: 35px;
         width: 100%;
     }
@@ -490,9 +512,39 @@ body {
     }
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+/*tablet screens*/
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+    .welcome-text {
+        color: #260026;
+        font-weight: 500;
+        font-size: 18px;
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .card {
+        max-height: 120px;
+        max-width: 120px;
+        border: 2px solid #ff00ff;
+        grid-gap: 3px;
+    }
+}
+
+/*@media only screen and (orientation: landscape) {
+    .home-container-fluid {
+        background: radial-gradient(#ffccff, #ff4cff);
+
+    }
+
     #grid {
         grid-template-columns: repeat(8, auto);
         grid-gap: 2px;
     }
-}
+
+    .card {
+        max-height: 80px;
+        max-width: 80px;
+        border: 2px solid #ff00ff;
+    }
+} */
