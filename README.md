@@ -1,49 +1,47 @@
-<!--IMAGE HERE-->
+![App Title](https://i.imgur.com/6eP9WUK.png)
+## **A Card Matching Memory Game**
+---
+
+![mock up](https://i.imgur.com/UoKH5DY.png)
 
 ## **Table of Contents**
 
-### **1. UX**
-       - 1.1 Overview
-       - 1.2 Goals
-       - 1.3 User Stories
-       - 1.4 Design Process
-                * Colour Palette
-                * Images
-                * Typography
-                * Amimations
-                * Footers
-                * Wireframes
-                * Development Process
+### [**1. UX**](#1-ux)
+- [1.1 Overview](#11-overview)
+- [1.2 Goals](#12-goals)
+- [1.3 User Stories](#1-3user-stories)
+- [1.4 Design Process](#14-design-process)
+    * Colour Palette
+    * Images
+    * Typography
+    * Amimations
+    * Footers
+    * Wireframes
+    * Development Process
+### [**2. Features**](#2-features)
+- [2.1 Existing Features](#21-existing-features)
+- [2.2 Future Features](#22-future-features)
+### [**3. Technologies Used**](#3-Technologies-used)
+- [3.1 Languages](#31-languages)
+- [3.2 Libraries](#32-libraries)
+- [3.3 Tools](#33-tools)
+- [3.4 Resources](#34-resources)
+### [**4. Testing**](#4-testing)
+- [4.1 Automatic Testing](#41-automatic-testing)
+- [4.2 Manual Testing](#42-manual-testing)
+### [**5. Bugs and Solutions**](#5-bugs)
+- [5.1 Resolved Bugs](#51-resolved-bugs)
+- [5.2 Still Existing](#52-still-existing)
+### [**6. Deployment**](#6-deployment)
+- [6.1 GitHub Pages](#61-github-pages)
+- [6.2 Locally](#62-locally)
+### [**7. Credits**](#7-credits)
+- [7.1 Content](#71-content)
+- [7.2 Media](#72-media)
+- [7.3 Code](#73-code)
+- [7.4 Acknowledgements](#74-Acknowledgements)
+### [**8. Disclaimer**](#8-disclaimer)
 
-### **2. Features**
-       - 2.1 Existing Features
-       - 2.2 Future Features To Implement
-
-### **3. Technologies Used**
-       - 3.1 Languages
-       - 3.2 Libraries
-       - 3.3 Tools
-       - 3.4 Resources
-
-### **4. Testing**
-      - 4.1 Automatic Testing
-      - 4.2 Manual Testing
-
-### **5. Bugs and Solutions**
-      - 5.1 Resolved Bugs
-      - 5.2 Still Existing
-
-### **6. Deployment**
-      - 6.1 GitHub Pages
-      - 6.2 Locally
-
-### **7. Credits**
-      - 7.1 Content
-      - 7.2 Media
-      - 7.3 Code
-      - 7.4 Acknowledgements
-
-### **8. Disclaimer**
 ---
 
 ## **1. UX** 
@@ -52,18 +50,17 @@ This interactive memory game was designed to highlight the natural beauty of
 Ireland in an entertaining and engaging way. 
 It is suitable for all ages.
 
-
 ### **1.2 Project Goals**
 The aim of this project was to create a visually attractive, 
 interactive and fun card matching memory game. In doing so 
 gain a deeper understanding of interactive web applications and develop 
 my javascript skills. 
 
-      - To build a game that: 
-                 - users would enjoy playing
-                 - that was challenging
-                 - that was visually appealing
-                 - help improve memory skills
+- To build a game that: 
+    - users would enjoy playing
+    - that was challenging
+    - that was visually appealing
+    - help improve memory skills
 
 ### **1.3 User Stories**
 *"As a user, I want a game that is fun to play."*  
@@ -98,19 +95,19 @@ commonly associated with Ireland.
  colours in keeping with the aesthetic I was aiming for.  
  These colours were used for the main elements of the application.  
 
-    - Home Page  
-       - #00ff00 stood out against the background and was used for the title, 
+- Home Page:  
+    - #00ff00 stood out against the background and was used for the title, 
        subtitle, footer and button backgrounds  
-       - #ff00ff was used to the button and footer text  
-    - Game Page  
-       - #00ff00 was used as a border for the cards and footer text
-       - #ff00ff was used for the timer, flip counter and footer
-    - Win Overlay 
-       - #00ff00 was used for the text, animations and button background
-       - #ff00ff was used to the button text
-    - Lose Overlay 
-       - #00ff00 was used for the button text
-       - #ff00ff was used for the text, animations and button background
+    - #ff00ff was used to the button and footer text  
+- Game Page:  
+    - #00ff00 was used as a border for the cards and footer text
+    - #ff00ff was used for the timer, flip counter and footer
+- Win Overlay:
+    - #00ff00 was used for the text, animations and button background
+    - #ff00ff was used to the button text
+- Lose Overlay: 
+    - #00ff00 was used for the button text
+    - #ff00ff was used for the text, animations and button background
    
 ##### **Secondary Colour Palette**
  ![Imgur](https://i.imgur.com/0rWBIho.png)
@@ -118,11 +115,11 @@ commonly associated with Ireland.
 I chose these colours as they worked well with my primary colour palette but 
 were more subdued. 
 
-    - #260026 was used for the welcome text on the home page  
-    - #800080 was used for the shadow on the animated stars in the modal title 
-    - #cc00cc was used for the modal title, instruction stars and button background  
-    - #004c00 was used for the main title shadow  
-    - #32ff32 was used for font awesome icons on game page buttons  
+- #260026 was used for the welcome text on the home page  
+- #800080 was used for the shadow on the animated stars in the modal title 
+- #cc00cc was used for the modal title, instruction stars and button background  
+- #004c00 was used for the main title shadow  
+- #32ff32 was used for font awesome icons on game page buttons  
 
 ##### **Background Colours**
 I used gradients for the background colours as I felt a block colour would be look 
@@ -193,34 +190,34 @@ To view the wireframes please click the links below:
 ## **2. Features**
 ### **2.1 Existing Features**  
  #### **index.html**
-    - **_Game Title_** - identifys the name and type of game
-    - **_Welcome Text_** - Information about the game
-    - **_How to Play_** button - triggers modal with game instructions  
-    - **_Start Game_** button - loads game page  
-    - **_Footer_** - contains copyright information
+ - **_Game Title_** - identifys the name and type of game
+ - **_Welcome Text_** - Information about the game
+ - **_How to Play_** button - triggers modal with game instructions  
+ - **_Start Game_** button - loads game page  
+ - **_Footer_** - contains copyright information
  #### **game.html**  
-    - **_Home_** button - indicated by [FontAwesome](https://fontawesome.com/icons/home?style=solid) *Home* 
+ - **_Home_** button - indicated by [FontAwesome](https://fontawesome.com/icons/home?style=solid) *Home* 
     icon will bring the user back to the home page when clicked  
-    - **_Reset_** button - indicated by [FontAwesome](https://fontawesome.com/icons/redo?style=solid) *Redo* 
+ - **_Reset_** button - indicated by [FontAwesome](https://fontawesome.com/icons/redo?style=solid) *Redo* 
     icon will reset the game board, timer and flip counter
-    - **_Flip Counter_** - counts the number of flips a user has made, allowing them to track their progress
-    - **_Timer_** - displays the time remaining for the user to complete the game
-    - **_Game Board_** - displays the games cards face down ready to be clicked 
-    - **_Game Cards_** - images to be matched by the user to win the game 
-    - **_Footer_** - contains copyright information
+ - **_Flip Counter_** - counts the number of flips a user has made, allowing them to track their progress
+ - **_Timer_** - displays the time remaining for the user to complete the game
+ - **_Game Board_** - displays the games cards face down ready to be clicked 
+ - **_Game Cards_** - images to be matched by the user to win the game 
+ - **_Footer_** - contains copyright information
 #### **win/lose overlays**
-    - **_Win Overlay_** - triggered when the user wins the game by finding all the matching pairs
+ - **_Win Overlay_** - triggered when the user wins the game by finding all the matching pairs
     within the alloted time and flips
-    - **_Lose Overlay_** - triggered when the user loses the game
-    - both overlays contain 2 buttons:
-        - **_Play Again_** button - will reload the game so the user can play again
-        - **_Home_** button - will return the user to the home page
-    - both overlays contain animations
-        - smiley faces on the **_win overlay_** to emphasize the win message
-        - sad faces pn the **_lose overlay_** to emphasize the lose message
+ - **_Lose Overlay_** - triggered when the user loses the game
+ - both overlays contain 2 buttons:  
+     - **_Play Again_** button - will reload the game so the user can play again  
+     - **_Home_** button - will return the user to the home page
+ - both overlays contain animations:  
+     - smiley faces on the **_win overlay_** to emphasize the win message
+     - sad faces pn the **_lose overlay_** to emphasize the lose message
 
 ### **2.2 Future Features**
- - Add difficulty levels for the user to choose from:  
+- Add difficulty levels for the user to choose from:  
        - Easy   
        - Medium  
        - Hard
@@ -249,13 +246,15 @@ To view the wireframes please click the links below:
 - [Gitpod](https://gitpod.io/) - IDE for local development
 - [Github](https://github.com/) - to host the repository
 - [Github Pages](https://pages.github.com/) - for deployment of the website
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - to test responsiveness and diagnose problems
-- [Am I Responsive](http://ami.responsivedesign.is/) - to test responsiveness on various devices
-- [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en)  -to test the performace of the application
+- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - to test responsive design and diagnose problems
+- [Am I Responsive](http://ami.responsivedesign.is/) - to test responsive design on various devices
+- [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en)  - to test the performace of the application
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) - to check for overflow
-
+- [Favicon](https://favicon.io/favicon-converter/) - to create favicon  
+- [Imgur](https://imgur.com/) - to store external images for README.made
 
 ### **3.4 Resources**
+- [cdnjs](https://cdnjs.com/)
 - [w3schools](https://www.w3schools.com/) 
 - [Stack Overflow](https://stackoverflow.com/)
 - [CSS Tricks](https://css-tricks.com/)
@@ -265,15 +264,164 @@ To view the wireframes please click the links below:
 ## **4. Testing**
 ### **4.1 Automatic Testing** 
 - [W3C Markup Validation](https://validator.w3.org/#validate_by_input) - to validate HTML
-        - no errors found
+    - no errors found
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) - to vaildate CSS Code
-        - no errors found
+    - no errors found
 - [JShint](https://jshint.com/) - to validate Javascript code
-        - no major errors found
+    - no major errors found
+    - below metrics provided:  
+
+![jshint](https://i.imgur.com/FF76pz7.png)
+
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln/related) - to identify any overflow issues
+    - no overflow issues
+- [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en)  - to test the performace of the application
+Lighthouse was used to test the performance of each page on mobile and Desktop.
+The following reports were generated:
+  #### **index.html - Desktop**
+  **Overall performace**
+  ![performance](https://i.imgur.com/lHdachO.png)  
 
+  **Accessibility**
+  ![accessibility](https://i.imgur.com/EkqqvG3.png)  
 
+  **Best Practices & SEO** 
+  ![best practices & SEO](https://i.imgur.com/1Zfn2za.png)  
+ 
+  #### **game.html - Desktop**
+  **Overall performace**
+  ![performance](https://i.imgur.com/vic64QN.png)  
 
+  **Accessibility**
+  ![accessibility](https://i.imgur.com/0uQNViX.png)
+     - Lost points on accessibility due to poor contrast between background and text colour on the footer.
+     - I didn't address this issue as I felt that since the only information contained in the footer was 
+     copyright information it was not necessary as it did not effect the playability of the game.  
 
+  ![imgur](https://i.imgur.com/Re7DbEC.png)  
 
+     - Lost points due to alt attributes not present on images
+     - I did not address this issue as the images were created from a javascript array  
+
+  ![imgur](https://i.imgur.com/qQeWdPa.png)  
+
+  **Best Practices & SEO**  
+  ![best practices & SEO](https://i.imgur.com/Z8Bfwnx.png)  
+
+     - Lost points due to alt attributes not present on images  
+
+  ![imgur](https://i.imgur.com/qQeWdPa.png)
+
+#### **index.html - Mobile**
+ **Overall performace**
+  ![performance](https://i.imgur.com/CvpvaDm.png)
+  
+ **Accessibility**  
+  ![accessibility](https://i.imgur.com/B9xyM7z.png)   
+
+**Best Practices & SEO**  
+  ![best practices & SEO](https://i.imgur.com/DQFFVqZ.png)  
+
+#### **game.html - Mobile**
+**Overall performace**  
+  ![performance](https://i.imgur.com/LPaeg43.png)  
+
+  **Accessibility**  
+  ![accessibility](https://i.imgur.com/CDmK4Du.png)  
+
+- lost points due to alt attributes missing from images  
+
+  **Best Practices & SEO**   
+  ![best practices & SEO](https://i.imgur.com/G7UKgSU.png)  
+
+- [GT Metrix](https://gtmetrix.com/) - to test loading speed
+ ![GTmetrix](https://i.imgur.com/Ul9R4pg.png)
+
+ ### **4.2 Manual Testing**
+ Each element was tested to ensure it was working correctly.  
+ Testing on functionality was carried out throughout the build using 
+ [DevTools](https://developers.google.com/web/tools/chrome-devtools) to ensure everything worked as it should and to identify
+ issues/bugs.
+
+ #### **index.html**
+ - **_How to Play_** Button 
+    - clicked to ensure modal is triggered  
+ - **_Modal_** 
+    - *close* button clicked to ensure modal closes
+    - *Let's Play* button takes user to game page when clicked
+
+#### **game.html**
+- **_Home_** Button 
+    - returns user to home page when clicked  
+- **_Restart_** Button 
+    - resets game board, timer and flip counter when clicked  
+- **_Flip Counter_** 
+    - decrements with each card click    
+    - triggers lose modal when it reaches zero
+- **_Timer_** 
+    - timer starts on first card click
+    - counts down in seconds  
+    - triggers lose modal when timer reaches zero 
+- **_Game Board_**
+    - displays correctly on load
+    - only clicks on the cards trigger flip counter
+- **_Cards_**
+    - 3d flip when clicked to reveal face
+    - 3d flip to return cards to starting position when not a match
+    - images are displayed correctly
+
+#### **Overlays**
+- **_Win Overlay_**
+    - triggered when winning conditions are met
+    - *Play Again* Button resets the gameboard, timer and flip counter and hides overlay
+    - *Home* Button returns user to the home screen
+    - *Animations* begin as soon as overlay is visible
+
+- **_Lose Overlay_**
+    - triggered when losing conditions are met
+    - *Play Again* Button resets the gameboard, timer and flip counter and hides overlay
+    - *Home* Button returns user to the home screen
+    - *Animations* begin as soon as overlay is visible
+
+#### **Game Functionality**
+- board locks and cards cannot be clicked while check for match function is running
+- matching pairs stay face up
+- flipped cards that are not a match are returned to starting position  
+- all pairs found with alotted time and flips triggers *Win Overlay*
+- time/flips running out before all pairs are found triggers *Lose Overlay*
+- cards stay face up long enough for user to see images
+- game is winable within the alotted time and flips
+- clicks anywhere outside of the game board are not counted by flip counter
+
+#### **Responsive Design**
+- Responsive design was tested throughout the build using [DevTools](https://developers.google.com/web/tools/chrome-devtools)
+and [Am I Responsive](http://ami.responsivedesign.is/)
+- It was also tested physically on various devices  
+
+#### **User Stories**
+- *"As a user, I want a game that is fun to play."*  
+  - Bright, vibrant colour palette, interesting images and animations, while not being too easy 
+  contribute in making this a fun game to play
+- *"As a user, I want a game that is challenging."* 
+  - The amount of cards, time limit and flip limit add difficulty to the game 
+- *"As a user, I want to be able to track my progress."*
+  - The timer and flip counter allow users to track their progress throughout the game  
+- *"As a user, I want to a game where I can practice my memory skills."* 
+  - playing card matching games can help improve memory skills 
+- *"As a user, I want a game that is easy to navigate."*
+  - All button immediately identifiable, and purpose is clearly definable 
+- *"As a user, I want a game that is visually appealing."*  
+  - The colour palette and images give a visually appealing aesthetic
+- *"As a user, I want to be able to easily find out how to play."* 
+  - The *How to Play* button is clearly visible and the triggered *modal* explains clearly how to play the game
+- *"As a user, I want to be able to restart the game at any point."* 
+  - The reset button allows the user to reset the game at any time 
+- *"As a user, I want a game that is intuitive."*  
+  - Navigation throughout the application is clearly defined, how to play the 
+  game would be quickly discernible without reading the instructions 
+
+  ---
+
+## **5. Bugs and Solutions**
+### **5.1 Resolved Bugs/Issues**
 
