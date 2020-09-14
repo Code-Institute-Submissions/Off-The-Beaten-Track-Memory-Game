@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('resetBtn3').addEventListener('click', resetGame, false);
 
     //dynamically set copyright date
-    const date = document.querySelectorAll('.date');
-    date.innerHTML = new Date().getFullYear();
+    let date = document.getElementById('date');
+    date.textContent = new Date().getFullYear();
 
 
     //Function from Stack Overflow
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     flipCard(this);
                     flipCount();
                 }
-            }
+            };
             grid.appendChild(card);
             id++;
         });
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 unFlip(previousImgId, currentImgId);
                 flipCounter = 0;
                 currentName = '';
-            }, 2000)
+            }, 2000);
         }
         //check if game is won , display win overlay
         if (matchedCards.length === (gameCards.length / 2) && timeRemaining > 0 && clickCounter > 0) {
