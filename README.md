@@ -1,46 +1,61 @@
-![App Title](https://i.imgur.com/6eP9WUK.png)
-## **A Card Matching Memory Game**
+<div align="center">  
+
+<img src="https://i.imgur.com/6eP9WUK.png">
+
+# **A Card Matching Memory Game**
+
+#### **_An interactive card matching game built using vanilla Javascript for my Interactive Frontend Project_** 
+
+</div>
+
 ---
 
 ![mock up](https://i.imgur.com/UoKH5DY.png)
 
-## **Table of Contents**
+## [**Table of Contents**](#table-of-contents)
 
-### [**1. UX**](#1-ux)
-- [1.1 Overview](#11-overview)
-- [1.2 Goals](#12-goals)
-- [1.3 User Stories](#1-3user-stories)
-- [1.4 Design Process](#14-design-process)
-    * Colour Palette
-    * Images
-    * Typography
-    * Amimations
-    * Footers
-    * Wireframes
-    * Development Process
-### [**2. Features**](#2-features)
-- [2.1 Existing Features](#21-existing-features)
-- [2.2 Future Features](#22-future-features)
-### [**3. Technologies Used**](#3-Technologies-used)
-- [3.1 Languages](#31-languages)
-- [3.2 Libraries](#32-libraries)
-- [3.3 Tools](#33-tools)
-- [3.4 Resources](#34-resources)
-### [**4. Testing**](#4-testing)
-- [4.1 Automatic Testing](#41-automatic-testing)
-- [4.2 Manual Testing](#42-manual-testing)
-### [**5. Bugs and Solutions**](#5-bugs)
-- [5.1 Resolved Bugs](#51-resolved-bugs)
-- [5.2 Still Existing](#52-still-existing)
-### [**6. Deployment**](#6-deployment)
-- [6.1 GitHub Pages](#61-github-pages)
-- [6.2 Locally](#62-locally)
-### [**7. Credits**](#7-credits)
-- [7.1 Content](#71-content)
-- [7.2 Media](#72-media)
-- [7.3 Code](#73-code)
-- [7.4 Acknowledgements](#74-Acknowledgements)
-### [**8. Disclaimer**](#8-disclaimer)
+[**1. UX**](#1.-ux)
+- [1.1 Overview](#1.1-overview)
+- [1.2 Project Goals](#1.2-project-goals)
+- [1.3 User Stories](#1.3-user-stories)
+- [1.4 Design Process](#1.4-design-process)
+    * [Colour Palette](#colour-palette)
+    * [Images](#images)
+    * [Typography](#typography)
+    * [Amimations](#animations)
+    * [Footers](#footers)
+    * [Wireframes](#wireframes)
+    * [Development Process](#development-process)
+
+[**2. Features**](#2.-features)
+- [2.1 Existing Features](#2.1-existing-features)
+- [2.2 Future Features](#2.2-future-features)
+
+[**3. Technologies Used**](#3.-technologies-used)
+- [3.1 Languages](#3.1-languages)
+- [3.2 Libraries](#3.2-libraries)
+- [3.3 Tools](#3.3-tools)
+- [3.4 Resources](#3.4-resources)
+
+[**4. Testing**](#4.-testing)
+- [4.1 Automatic Testing](#4.1-automatic-testing)
+- [4.2 Manual Testing](#4.2-manual-testing)
+
+[**5. Bugs and Solutions**](#5.-bugs)
+- [5.1 Resolved Bugs](#5.1-resolved-bugs)
+- [5.2 Still Existing](#5.2-still-existing)
+
+[**6. Deployment**](#6-deployment)
+- [6.1 GitHub Pages](#6.1-github-pages)
+- [6.2 Locally](#6.2-locally)
+
+[**7. Credits**](#7.-credits)
+- [7.1 Content](#7.1-content)
+- [7.2 Media](#7.2-media)
+- [7.3 Code](#7.3-code)
+- [7.4 Acknowledgements](#7.4-acknowledgements)
+
+[**8. Disclaimer**](#8.-disclaimer)
 
 ---
 
@@ -79,7 +94,10 @@ appealing while still maintaining readability and cohesion throughout.
 I wanted each of the elements to be clearly visible and immediately 
 identifiable.  
 I kept the amount of elements on each page to a minimum as I wanted to achieve an uncluttered
-and clean aesthetic.
+and clean aesthetic.  
+I used [Bootstrap 4](https://getbootstrap.com/) for the layout on the home page.  
+[CSS Grid](https://www.w3schools.com/css/css_grid.asp) for the layout on the game page as I felt it was better for 
+constructing the game board.
 
 #### Colour Palette
 I wanted the colour scheme to be bright and vibrant without becoming 
@@ -139,7 +157,7 @@ I used shadowing on the main/subtitles and buttons on the home page to make them
 from the page and give a 3d effect.
 
 #### **Images**   
-I chose images that I felt highlighted the beauty of Ireland. 
+I chose images that I felt were interesting and a good reflection of the Irish landscape. 
 
 #### **Typography**
 I chose [Boogaloo](https://fonts.google.com/specimen/Boogaloo?query=boo)
@@ -185,6 +203,7 @@ To view the wireframes please click the links below:
   - Add modal  
   - Add styling 
 
+##### [Back to Table of Contents](#table-of-contents)
 ---
 
 ## **2. Features**
@@ -224,6 +243,7 @@ To view the wireframes please click the links below:
 - Add card decks with images for different countries that the user can choose to play
 - Add an interactive map with markers identifying the locations in the images used in the game
 
+##### [Back to Table of Contents](#table-of-contents)
 ---
 
 ## **3. Technologies Used**
@@ -259,6 +279,7 @@ To view the wireframes please click the links below:
 - [Stack Overflow](https://stackoverflow.com/)
 - [CSS Tricks](https://css-tricks.com/)
 
+[Back to Table of Contents](#table-of-contents)
 ---
 
 ## **4. Testing**
@@ -420,8 +441,191 @@ and [Am I Responsive](http://ami.responsivedesign.is/)
   - Navigation throughout the application is clearly defined, how to play the 
   game would be quickly discernible without reading the instructions 
 
+##### [Back to Table of Contents](#table-of-contents)
   ---
 
 ## **5. Bugs and Solutions**
-### **5.1 Resolved Bugs/Issues**
+### **5.1 Resolved Bugs**
+- Game timer restarting when it got to zero 
+   - changed `setInterva()` to a variable
+   - added a `clearTimeout()` with the `setInterval()` variable as an argument 
+   ```javascript
+    timerId = setInterval(function() {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
 
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            display.textContent = minutes + ':' + seconds;
+
+            if (timer-- <= 0) {
+                loseGame(timer);
+                timer = duration;
+                clearTimeout(timerId);
+            }
+    ```
+
+- `onclick` attribute of `gameBoard` not removing after first click and 
+ causing timer to restart with every subsequent click
+    - created new gobal variable `firstClick` and incremented it
+    - used `removeAttribute` to remove `onclick` while `(firstClick < 2)`
+    ```javascript
+     let gameBoard = document.querySelector('.board');
+     gameBoard.onclick = (function() {
+        firstClick++
+         if (parseInt(firstClick) < 2) {
+            gameBoard.removeAttribute('onclick');
+            timeRemaining = 60 * 2,
+                display = document.querySelector('#timer');
+            gameTimer(timeRemaining, display);
+        }
+    });
+    ```
+- Win and Lose overlays not displaying when correct conditions were met    
+   - was using `getElementByClassName` without supplying index
+   - added `[0]` to end of `getElementByClassName`
+ ```javascript
+    document.getElementsByClassName('win-overlay')[0].style.display = 'block';
+    document.getElementsByClassName('lose-overlay')[0].style.display = 'block';
+```
+
+- Flip counter not counting card clicks
+   - created new global variable `clickCounter` and decremented it
+   - created new local variable `clickCount`, added `textContent` attribute and set it as the value of `clickCounter`
+  ```javascript
+     function flipCount() {
+        clickCounter--;
+        let clickCount = document.querySelector('#flip-counter');
+        clickCount.textContent = clickCounter;
+    }
+    ```
+- 3d flip not working on `unFlip()`
+   - removed `card-back`, `card-front` and `flip` classes from `previousCard` and `currentCard` variables
+   ```javascript
+    previousCard.classList.remove('card-back', 'card-front', 'flip');
+    currentCard.classList.remove('card-back', 'card-front', 'flip');
+    ```
+- Win game condition `matchedCards.length === gameCards.length` never being met 
+   - changed condition to `matchedCards.length === (gameCards.length / 2)`
+
+- Game board not locking when 2 cards had been flipped
+   - added `if` condition to `createBoard()`
+   ```javascript
+    if (flipCounter < 2) {
+                    flipCard(this);
+                    flipCount();
+                }
+    ```
+- Game board not reseting in `resetGame()`
+   - created new local variable
+   ```javascript
+   let node = document.getElementById('grid');
+   node.innerHTML = '';
+   ```
+- Flip Counter not reseting in `resetGame()`
+   - reset `textContent` of `clickCount` variable
+   ```javascript
+   let clickCount = document.querySelector('#flip-counter');
+    clickCount.textContent = 98;
+    ```
+- Timer not reseting in `resetGame()`
+   - reset `textContent` of `timer` variable and added `clearInterval(timerId)`
+   ```javascript
+    let timer = document.querySelector('#timer');
+        timer.textContent = '00:00';
+        clearInterval(timerId);
+    ```
+
+### **5.2 Still Existing**
+- **_How to Play_** button on home page
+  - pulse effect not stopping after button has been clicked or when *modal* is closed with *x*
+
+- **_Layout_**
+  - layout not responsive in landscape position on mobile devices 
+
+- **_Cards Flipping_**
+   - slight delay on image being displayed after card is clicked
+   - this is not a constant problem and is more of an issue on mobile devices
+   - I have not yet figured out what is causing it
+
+##### [Back to Table of Contents](#table-of-contents)
+---
+
+## **6. Deployment**
+### **6.1 GitHub Pages**
+The live version of this site is hosted using [Github Pages](https://pages.github.com/).
+
+To deploy **_Off The Beaten Track_** from its 
+[GitHub repository](https://github.com/aineon/Off-The-Beaten-Track-Memory-Game), follow the below steps:
+1. Log in to **Github**  
+2. Select **aineon/Off-The-Beaten-Track-Memory-Game** from the list of repositories
+3. From the menu items near the top of the page, select **Settings**
+4. Scroll down to the **GitHub Pages** section.
+5. Under **Source** click the drop-down menu labelled **None** and select **Master Branch**
+6. On selecting Master Branch the page is automatically refreshed, the website is now deployed. 
+7. Scroll back down to the **GitHub Pages** section to retrieve the link to the deployed website.
+
+### **6.2 Locally**
+To run this project locally, follow the below steps:
+
+To clone this project from GitHub:
+1. Click the link to the [Off The Beaten Track repository](https://github.com/aineon/Off-The-Beaten-Track-Memory-Game)
+2. Under the repository name, click **Code** button
+3. In the **_Clone with HTTPs_** section, copy the clone URL for the repository
+4. In your local IDE open **_Git Bash_**
+5. Change the current working directory to the location where you want the cloned directory to be made
+6. Type `git clone` and then paste the URL you copied in Step 3.
+```console
+git clone https://github.com/aineon/Off-The-Beaten-Track-Memory-Game.git
+```
+7. Press Enter. Your local clone will be created
+8. To remove the origin link from your IDE type `git remote rm origin`
+
+- Alternatively you can download the **ZIP folder** of this project by clicking the **Code** button *(as you did in step 2)*
+and selecting **_Download ZIP_**
+- It can then be unpacked into your desired location
+- Open the **index.html** file to run the project locally
+
+Further reading and troubleshooting on cloning a repository from GitHub [here](https://help.github.com/en/articles/cloning-a-repository).
+
+##### [Back to Table of Contents](#table-of-contents)
+---
+
+## **7. Credits**
+### **7.1 Content**
+- All content was created by the developer
+
+### **7.2 Media**
+**Images**
+- Card face images were obtained from the below sources:
+  - [Unsplash](https://unsplash.com/)
+  - [Scopio](https://scop.io/)
+  - [Pixabay](https://pixabay.com/)
+  - [Pexels](https://www.pexels.com/)
+  - Developers own photos
+- Ireland from space image on back of card was taken from 
+[Pinterest](https://www.pinterest.com/pin/214835844710473737/)
+
+### **7.3 Code**
+- **`shuffleCards()`** taken from [Stack Overflow](https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array)
+- **`gameTimer()`** taken from [Stack Overflow](https://stackoverflow.com/questions/20618355/the-simplest-possible-javascript-countdown-timer)
+and edited to suit my needs
+- **`createBoard()`** and **`unFlip()`** inspired by 
+[Ania Kubow YouTube Tutorial](https://www.youtube.com/watch?v=tjyDOHzKN0w)
+- **Animations and Background Gradient** inspired by 
+[Web Dev Simplified YouTube Tutorial](https://www.youtube.com/watch?v=28VfzEiJgy4)
+
+### **7.4 Acknowledgements**
+I would like to say a massve thank you to my mentor [Adegbenga Adeye](https://github.com/deye9) without whom this project would never have gotten finished!
+
+I would also like to thank the CI community on the Code Institute Slack channel.
+
+##### [Back to Table of Contents](#table-of-contents)
+---
+
+## **8. Disclaimer**
+All images and content on this website is for educational purposes only.
+
+##### [Back to Table of Contents](#table-of-contents)
+---
