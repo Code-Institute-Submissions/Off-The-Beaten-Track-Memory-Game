@@ -1,54 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const defaultImage = 'assets/images/ireland.jpg',
+    const defaultImage = 'assets/images/ireland.png',
         maxFlip = 2,
         cardList = [{
                 name: 'pink',
-                img: 'assets/images/pink_mountain.jpg'
+                img: 'assets/images/pink_mountain.png'
             },
             {
                 name: 'killory',
-                img: 'assets/images/killory.jpg'
+                img: 'assets/images/killory.png'
             },
             {
                 name: 'island',
-                img: 'assets/images/skellig_michael.jpg'
+                img: 'assets/images/skellig_michael.png'
             },
             {
                 name: 'mountains',
-                img: 'assets/images/mountains.jpg'
+                img: 'assets/images/mountains.png'
             },
             {
                 name: 'national park',
-                img: 'assets/images/national_park.jpg'
+                img: 'assets/images/national_park.png'
             },
             {
                 name: 'portnoo',
-                img: 'assets/images/portnoo.jpg'
+                img: 'assets/images/portnoo.png'
             },
             {
                 name: 'dolmen',
-                img: 'assets/images/dolmen.jpg'
+                img: 'assets/images/dolmen.png'
             },
             {
                 name: 'sand_dune',
-                img: 'assets/images/sand_dune.jpg'
+                img: 'assets/images/sand_dune.png'
             },
             {
                 name: 'dogs_bay',
-                img: 'assets/images/dogs_bay.jpg'
+                img: 'assets/images/dogs_bay.png'
             },
             {
                 name: 'sky-road',
-                img: 'assets/images/sky_road.jpg'
+                img: 'assets/images/sky_road.png'
             },
             {
                 name: 'moher',
-                img: 'assets/images/moher.jpg'
+                img: 'assets/images/moher.png'
             },
             {
                 name: 'horse',
-                img: 'assets/images/horse.jpg'
+                img: 'assets/images/horse.png'
             }
         ];
 
@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let clickCount = document.querySelector('#flip-counter');
         clickCount.textContent = clickCounter;
     }
+
 
     //Fisher-Yates shuffle from Stack Overflow
     //randomize cards
@@ -200,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentName = '';
             }, 2000);
         }
+
         //check if game is won , display win overlay
         if (matchedCards.length === (gameCards.length / 2) && timeRemaining > 0 && clickCounter > 0) {
             document.getElementsByClassName('win-overlay')[0].style.display = 'block';
@@ -224,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         previousCard.setAttribute('src', defaultImage);
     }
 
-
+    //triggers lose game overlay when game is lost
     function loseGame(timeRemaining) {
         if (matchedCards.length < (gameCards.length / 2) && timeRemaining <= 0 || clickCounter === 0) {
             document.getElementsByClassName('lose-overlay')[0].style.display = 'block';
