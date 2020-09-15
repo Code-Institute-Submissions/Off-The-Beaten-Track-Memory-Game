@@ -14,11 +14,11 @@
 
 ## [**Table of Contents**](#table-of-contents)
 
-[**1. UX**](#1.-ux)
-- [1.1 Overview](#1.1-overview)
-- [1.2 Project Goals](#1.2-project-goals)
-- [1.3 User Stories](#1.3-user-stories)
-- [1.4 Design Process](#1.4-design-process)
+[**1. UX**](#1-ux)
+- [1.1 Overview](#11-overview)
+- [1.2 Project Goals](#12-project-goals)
+- [1.3 User Stories](#13-user-stories)
+- [1.4 Design Process](#14-design-process)
     * [Colour Palette](#colour-palette)
     * [Images](#images)
     * [Typography](#typography)
@@ -27,42 +27,42 @@
     * [Wireframes](#wireframes)
     * [Development Process](#development-process)
 
-[**2. Features**](#2.-features)
-- [2.1 Existing Features](#2.1-existing-features)
-- [2.2 Future Features](#2.2-future-features)
+[**2. Features**](#2-features)
+- [2.1 Existing Features](#21-existing-features)
+- [2.2 Future Features](#22-future-features)
 
-[**3. Technologies Used**](#3.-technologies-used)
-- [3.1 Languages](#3.1-languages)
-- [3.2 Libraries](#3.2-libraries)
-- [3.3 Tools](#3.3-tools)
-- [3.4 Resources](#3.4-resources)
+[**3. Technologies Used**](#3-technologies-used)
+- [3.1 Languages](#31-languages)
+- [3.2 Libraries](#32-libraries)
+- [3.3 Tools](#33-tools)
+- [3.4 Resources](#34-resources)
 
-[**4. Testing**](#4.-testing)
-- [4.1 Automatic Testing](#4.1-automatic-testing)
-- [4.2 Manual Testing](#4.2-manual-testing)
+[**4. Testing**](#4-testing)
+- [4.1 Automatic Testing](#41-automatic-testing)
+- [4.2 Manual Testing](#42-manual-testing)
 
-[**5. Bugs and Solutions**](#5.-bugs)
-- [5.1 Resolved Bugs](#5.1-resolved-bugs)
-- [5.2 Still Existing](#5.2-still-existing)
+[**5. Bugs and Solutions**](#5-bugs)
+- [5.1 Resolved Bugs](#51-resolved-bugs)
+- [5.2 Still Existing](#52-still-existing)
 
 [**6. Deployment**](#6-deployment)
-- [6.1 GitHub Pages](#6.1-github-pages)
-- [6.2 Locally](#6.2-locally)
+- [6.1 GitHub Pages](#61-github-pages)
+- [6.2 Locally](#62-locally)
 
-[**7. Credits**](#7.-credits)
-- [7.1 Content](#7.1-content)
-- [7.2 Media](#7.2-media)
-- [7.3 Code](#7.3-code)
-- [7.4 Acknowledgements](#7.4-acknowledgements)
+[**7. Credits**](#7-credits)
+- [7.1 Content](#71-content)
+- [7.2 Media](#72-media)
+- [7.3 Code](#73-code)
+- [7.4 Acknowledgements](#74-acknowledgements)
 
-[**8. Disclaimer**](#8.-disclaimer)
+[**8. Disclaimer**](#8-disclaimer)
 
 ---
 
 ## **1. UX** 
 ### **1.1 Overview**
 This interactive memory game was designed to highlight the natural beauty of 
-Ireland in an entertaining and engaging way. 
+Ireland in an entertaining and engaging way. It can also be used to practice and improve memory skills
 It is suitable for all ages.
 
 ### **1.2 Project Goals**
@@ -89,14 +89,14 @@ my javascript skills.
 *"As a user, I want a game that is intuitive."*  
 
 ### **1.4 Design Process**
-I wanted to design a game that looked fun, vibrant and visually 
+- I wanted to design a game that looked fun, vibrant and visually 
 appealing while still maintaining readability and cohesion throughout.
-I wanted each of the elements to be clearly visible and immediately 
+- I wanted each of the elements to be clearly visible and immediately 
 identifiable.  
-I kept the amount of elements on each page to a minimum as I wanted to achieve an uncluttered
+- I kept the amount of elements on each page to a minimum as I wanted to achieve an uncluttered
 and clean aesthetic.  
-I used [Bootstrap 4](https://getbootstrap.com/) for the layout on the home page.  
-[CSS Grid](https://www.w3schools.com/css/css_grid.asp) for the layout on the game page as I felt it was better for 
+- I used [Bootstrap 4](https://getbootstrap.com/) for the layout on the home page.  
+- [CSS Grid](https://www.w3schools.com/css/css_grid.asp) for the layout on the game page as I felt it was better for 
 constructing the game board.
 
 #### Colour Palette
@@ -108,7 +108,7 @@ commonly associated with Ireland.
 ##### **Primary Colour Palette**
 ![Imgur](https://i.imgur.com/qeHIShi.png)
 
- I chose lime green and magenta for my primary colour palette. 
+ I chose green and magenta for my primary colour palette. 
  I felt they complemented each other well and were fun, bright and vibrant 
  colours in keeping with the aesthetic I was aiming for.  
  These colours were used for the main elements of the application.  
@@ -140,7 +140,7 @@ were more subdued.
 - #32ff32 was used for font awesome icons on game page buttons  
 
 ##### **Background Colours**
-I used gradients for the background colours as I felt a block colour would be look 
+I used gradients for the background colours as I felt it would be look 
 better than a block colour.
 
 ![Imgur](https://i.imgur.com/DfnJsGE.png)
@@ -160,29 +160,29 @@ from the page and give a 3d effect.
 I chose images that I felt were interesting and a good reflection of the Irish landscape. 
 
 #### **Typography**
-I chose [Boogaloo](https://fonts.google.com/specimen/Boogaloo?query=boo)
+- I chose [Boogaloo](https://fonts.google.com/specimen/Boogaloo?query=boo)
 for the main/subtitles, timer, flip counter and button text. 
-I felt it was a fun font in keeping with the aesthetic I was going for, while still maintaining good readability.  
+- I felt it was a fun font in keeping with the aesthetic I was going for, while still maintaining good readability.  
 For the body, I chose [Montserrat](https://fonts.google.com/specimen/Montserrat?query=mo). I felt it worked well with 
 the Boogaloo font.
 
 #### **Animations**
-I decided to add animations to the modal to hightlight the title and the instructions. I felt that the 
+- I decided to add animations to the modal to hightlight the title and the instructions. I felt that the 
 star animations were more fun than traditional bullet points for the unordered list.
-I added animated smiley/sad faces to the win/lose overlay as I felt they were a fun addition while also 
+- I added animated smiley/sad faces to the win/lose overlay as I felt they were a fun addition while also 
 enforcing the win/lose message.
 
 #### **Footers**
 I used alternating colours on the footers on each page to balance the background colours.
 
 #### **Wireframes**
-I used [Balsamiq](https://balsamiq.com/wireframes/) to create the wireframes for my project.
-I create 3 sets of wireframes for Desktop, Tablet and Mobile.
-To view the wireframes please click the links below:
+- I used [Balsamiq](https://balsamiq.com/wireframes/) to create the wireframes for my project.
+- I create 3 sets of wireframes for Desktop, Tablet and Mobile.
+- To view the wireframes please click the links below:
 
 **Desktop**  
  - [index.html](https://i.imgur.com/zvdoQrP.png)  
- - [game.html](https://i.imgur.com/6AwZnbu.png)  
+ - [game.html](https://i.imgur.com/EReqe9b.png)  
  - [win/lose overlays](https://i.imgur.com/VyOANbZ.png)  
 
 **Tablet**  
