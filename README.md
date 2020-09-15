@@ -41,7 +41,7 @@
 - [4.1 Automatic Testing](#41-automatic-testing)
 - [4.2 Manual Testing](#42-manual-testing)
 
-[**5. Bugs and Solutions**](#5-bugs)
+[**5. Bugs and Solutions**](#5-bugs-and-solutions)
 - [5.1 Resolved Bugs](#51-resolved-bugs)
 - [5.2 Still Existing](#52-still-existing)
 
@@ -98,6 +98,8 @@ and clean aesthetic.
 - I used [Bootstrap 4](https://getbootstrap.com/) for the layout on the home page.  
 - [CSS Grid](https://www.w3schools.com/css/css_grid.asp) for the layout on the game page as I felt it was better for 
 constructing the game board.
+- This application was primarily designed to be used on Desktop and as such while it is responsive on mobile/tablet for potrait orientation, 
+it is not yet responsive at landscape orientation. 
 
 #### Colour Palette
 I wanted the colour scheme to be bright and vibrant without becoming 
@@ -186,14 +188,14 @@ I used alternating colours on the footers on each page to balance the background
  - [win/lose overlays](https://i.imgur.com/VyOANbZ.png)  
 
 **Tablet**  
- - [index.html](https://i.imgur.com/NaHrzSX.png)  
- - [game.html](https://i.imgur.com/L5Tgjf3.png)  
+ - [index.html](https://i.imgur.com/NaHrzSX.png)
+ - [game.html](https://i.imgur.com/L5Tgjf3.png) 
  - [win/lose overlays](https://i.imgur.com/mEEVwkU.png)  
 
  **Mobile**
- - [index.html](https://i.imgur.com/Sjawkjj.png)  
+ - [index.html](https://i.imgur.com/Sjawkjj.png) 
  - [game.html](https://i.imgur.com/xd6PcdP.png)  
- - [win/lose overlays](https://i.imgur.com/MVssHvs.png)  
+ - [win/lose overlays](https://i.imgur.com/MVssHvs.png) 
 
  #### **Development Process**
  To help me manage my project I broke the development process down into the below stages:
@@ -209,7 +211,7 @@ I used alternating colours on the footers on each page to balance the background
 ## **2. Features**
 ### **2.1 Existing Features**  
  #### **index.html**
- - **_Game Title_** - identifys the name and type of game
+ - **_Game Title_** - identifies the name and type of game
  - **_Welcome Text_** - Information about the game
  - **_How to Play_** button - triggers modal with game instructions  
  - **_Start Game_** button - loads game page  
@@ -270,8 +272,9 @@ I used alternating colours on the footers on each page to balance the background
 - [Am I Responsive](http://ami.responsivedesign.is/) - to test responsive design on various devices
 - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en)  - to test the performace of the application
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) - to check for overflow
-- [Favicon](https://favicon.io/favicon-converter/) - to create favicon  
-- [Imgur](https://imgur.com/) - to store external images for README.made
+- [Favicon](https://favicon.io/favicon-converter/) - to create favicon
+- [Autoprefixer](https://autoprefixer.github.io/) - to enusre vendor prefixes were added
+- [Imgur](https://imgur.com/) - to store external images for README.md
 
 ### **3.4 Resources**
 - [cdnjs](https://cdnjs.com/)
@@ -279,7 +282,7 @@ I used alternating colours on the footers on each page to balance the background
 - [Stack Overflow](https://stackoverflow.com/)
 - [CSS Tricks](https://css-tricks.com/)
 
-[Back to Table of Contents](#table-of-contents)
+##### [Back to Table of Contents](#table-of-contents)
 ---
 
 ## **4. Testing**
@@ -292,41 +295,49 @@ I used alternating colours on the footers on each page to balance the background
     - no major errors found
     - below metrics provided:  
 
-![jshint](https://i.imgur.com/FF76pz7.png)
+![jshint](https://i.imgur.com/YOzIU5N.png)
 
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln/related) - to identify any overflow issues
     - no overflow issues
+
 - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en)  - to test the performace of the application
 Lighthouse was used to test the performance of each page on mobile and Desktop.
 The following reports were generated:
   #### **index.html - Desktop**
+  
   **Overall performace**
+  
   ![performance](https://i.imgur.com/lHdachO.png)  
 
   **Accessibility**
+  
   ![accessibility](https://i.imgur.com/EkqqvG3.png)  
 
   **Best Practices & SEO** 
+  
   ![best practices & SEO](https://i.imgur.com/1Zfn2za.png)  
  
   #### **game.html - Desktop**
   **Overall performace**
+  
   ![performance](https://i.imgur.com/vic64QN.png)  
 
   **Accessibility**
+  
   ![accessibility](https://i.imgur.com/0uQNViX.png)
      - Lost points on accessibility due to poor contrast between background and text colour on the footer.
      - I didn't address this issue as I felt that since the only information contained in the footer was 
      copyright information it was not necessary as it did not effect the playability of the game.  
 
-  ![imgur](https://i.imgur.com/Re7DbEC.png)  
+  ![imgur](https://i.imgur.com/sbtkXaN.png)  
 
      - Lost points due to alt attributes not present on images
      - I did not address this issue as the images were created from a javascript array  
 
-  ![imgur](https://i.imgur.com/qQeWdPa.png)  
+  ![imgur](https://i.imgur.com/pR5HFJb.png)  
 
   **Best Practices & SEO**  
+  
   ![best practices & SEO](https://i.imgur.com/Z8Bfwnx.png)  
 
      - Lost points due to alt attributes not present on images  
@@ -335,36 +346,42 @@ The following reports were generated:
 
 #### **index.html - Mobile**
  **Overall performace**
+
   ![performance](https://i.imgur.com/CvpvaDm.png)
   
  **Accessibility**  
+
   ![accessibility](https://i.imgur.com/B9xyM7z.png)   
 
-**Best Practices & SEO**  
+**Best Practices & SEO** 
+
   ![best practices & SEO](https://i.imgur.com/DQFFVqZ.png)  
 
 #### **game.html - Mobile**
 **Overall performace**  
-  ![performance](https://i.imgur.com/LPaeg43.png)  
 
-  **Accessibility**  
-  ![accessibility](https://i.imgur.com/CDmK4Du.png)  
+ ![performance](https://i.imgur.com/LPaeg43.png)  
+
+**Accessibility**  
+
+ ![accessibility](https://i.imgur.com/K96FaZo.png)  
 
 - lost points due to alt attributes missing from images  
 
-  **Best Practices & SEO**   
-  ![best practices & SEO](https://i.imgur.com/G7UKgSU.png)  
+**Best Practices & SEO** 
+
+ ![best practices & SEO](https://i.imgur.com/G7UKgSU.png)  
 
 - [GT Metrix](https://gtmetrix.com/) - to test loading speed
  ![GTmetrix](https://i.imgur.com/Ul9R4pg.png)
 
- ### **4.2 Manual Testing**
+### **4.2 Manual Testing**
  Each element was tested to ensure it was working correctly.  
  Testing on functionality was carried out throughout the build using 
  [DevTools](https://developers.google.com/web/tools/chrome-devtools) to ensure everything worked as it should and to identify
  issues/bugs.
 
- #### **index.html**
+#### **index.html**
  - **_How to Play_** Button 
     - clicked to ensure modal is triggered  
  - **_Modal_** 
@@ -542,12 +559,13 @@ and [Am I Responsive](http://ami.responsivedesign.is/)
   - pulse effect not stopping after button has been clicked or when *modal* is closed with *x*
 
 - **_Layout_**
-  - layout not responsive in landscape position on mobile devices 
+  - layout not responsive in landscape position on mobile/tablet devices 
 
 - **_Cards Flipping_**
    - slight delay on image being displayed after card is clicked
    - this is not a constant problem and is more of an issue on mobile devices
    - I have not yet figured out what is causing it
+   - I compressed the images and converted them from jpg to png which reduced the delay
 
 ##### [Back to Table of Contents](#table-of-contents)
 ---
@@ -615,6 +633,7 @@ and edited to suit my needs
 [Ania Kubow YouTube Tutorial](https://www.youtube.com/watch?v=tjyDOHzKN0w)
 - **Animations and Background Gradient** inspired by 
 [Web Dev Simplified YouTube Tutorial](https://www.youtube.com/watch?v=28VfzEiJgy4)
+- **Vendor prefixes** were added based on [Autoprefixer](https://autoprefixer.github.io/)
 
 ### **7.4 Acknowledgements**
 I would like to say a massve thank you to my mentor [Adegbenga Adeye](https://github.com/deye9) without whom this project would never have gotten finished!
