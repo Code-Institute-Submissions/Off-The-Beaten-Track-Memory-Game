@@ -43,12 +43,12 @@ body {
 }
 
 .home-page-btn {
-    padding-top: 1.875rem;
+    padding-top: 1.2rem;
 }
 
 .play-btn,
 .start-btn {
-    margin-top: 1.25rem;
+    margin-top: 1.2rem;
     border-radius: 7px;
     background-color: #00ff00;
     color: #ff00ff;
@@ -524,7 +524,7 @@ body {
 
     .welcome-text {
         font-size: 1rem;
-        padding-top: 1.5rem;
+        padding-top: 0;
     }
 
     .home-footer,
@@ -608,7 +608,7 @@ body {
         color: #260026;
         font-weight: 500;
         font-size: 1.125rem;
-        padding-top: 1.875rem;
+        padding-top: 1.5rem;
         padding-left: 1.875rem;
         padding-right: 1.875rem;
     }
