@@ -394,6 +394,7 @@ Played the game repeatedly to test functionality
 - flipped cards that are not a match are returned to starting position
     - other cards cannot be clicked until cards are flipped back  
 - all pairs found with alotted time and flips triggers *Win Overlay*
+- timer stops when game is won
 - time/flips running out before all pairs are found triggers *Lose Overlay*
 - cards stay face up long enough for user to see images
 - game is winable within the alotted time and flips
@@ -435,7 +436,7 @@ and [Am I Responsive](http://ami.responsivedesign.is/)
 ## **5. Bugs and Solutions**
 ### **5.1 Resolved Bugs**
 - Game timer restarting when it got to zero 
-   - changed `setInterva()` to a variable
+   - changed `setInterval()` to a variable
    - added a `clearTimeout()` with the `setInterval()` variable as an argument 
    ```javascript
     timerId = setInterval(function() {
