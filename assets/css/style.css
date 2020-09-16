@@ -30,7 +30,6 @@ body {
 
 .subtitle {
     font-size: 4rem;
-    padding-bottom: 20px;
 }
 
 .welcome-text {
@@ -520,6 +519,11 @@ body {
     .page-title {
         padding-top: 1.5rem;
         font-size: 4rem;
+    }
+
+    .subtitle {
+        font-size: 3rem;
+        padding-bottom: .75rem;
     }
 
     .welcome-text {
