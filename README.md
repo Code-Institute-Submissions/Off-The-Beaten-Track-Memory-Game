@@ -71,11 +71,12 @@ interactive and fun card matching memory game. In doing so
 gain a deeper understanding of interactive web applications and develop 
 my javascript skills. 
 
-- To build a game that: 
+- As an owner my goals were to build a game that: 
     - users would enjoy playing
     - that was challenging
     - that was visually appealing
     - help improve memory skills
+    - that would improve my javascript skills and understanding
 
 ### **1.3 User Stories**
 *"As a user, I want a game that is fun to play."*  
@@ -102,18 +103,16 @@ constructing the game board.
 it is not yet responsive at landscape orientation. 
 
 #### Colour Palette
-I wanted the colour scheme to be bright and vibrant without becoming 
+- I wanted the colour scheme to be bright and vibrant without becoming 
 overpowering and garish.   
-I wanted to incorporate green into the design since it is a colour 
+- I wanted to incorporate green into the design since it is a colour 
 commonly associated with Ireland.   
 
 ##### **Primary Colour Palette**
 ![Imgur](https://i.imgur.com/qeHIShi.png)
 
- I chose green and magenta for my primary colour palette. 
- I felt they complemented each other well and were fun, bright and vibrant 
- colours in keeping with the aesthetic I was aiming for.  
- These colours were used for the main elements of the application.  
+I chose green and magenta for my primary colour palette. I felt they complemented each other well and were fun, bright and vibrant 
+ colours in keeping with the aesthetic I was aiming for. These colours were used for the main elements of the application.  
 
 - Home Page:  
     - #00ff00 stood out against the background and was used for the title, 
@@ -172,7 +171,7 @@ the Boogaloo font.
 - I decided to add animations to the modal to hightlight the title and the instructions. I felt that the 
 star animations were more fun than traditional bullet points for the unordered list.
 - I added animated smiley/sad faces to the win/lose overlay as I felt they were a fun addition while also 
-enforcing the win/lose message.
+emphasizing the win/lose message.
 
 #### **Footers**
 I used alternating colours on the footers on each page to balance the background colours.
@@ -303,74 +302,40 @@ I used alternating colours on the footers on each page to balance the background
 - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en)  - to test the performace of the application
 Lighthouse was used to test the performance of each page on mobile and Desktop.
 The following reports were generated:
-  #### **index.html - Desktop**
   
-  **Overall performace**
-  
-  ![performance](https://i.imgur.com/lHdachO.png)  
-
-  **Accessibility**
-  
-  ![accessibility](https://i.imgur.com/EkqqvG3.png)  
-
-  **Best Practices & SEO** 
-  
-  ![best practices & SEO](https://i.imgur.com/1Zfn2za.png)  
+#### **index.html - Desktop**
+- Please click the below links to view the reports:
+  - [Performance](https://i.imgur.com/lHdachO.png) Report   
+  - [Accessibility](https://i.imgur.com/EkqqvG3.png) Report 
+  - [Best Practices & SEO](https://i.imgur.com/1Zfn2za.png) Report 
  
-  #### **game.html - Desktop**
-  **Overall performace**
-  
-  ![performance](https://i.imgur.com/vic64QN.png)  
-
-  **Accessibility**
-  
-  ![accessibility](https://i.imgur.com/0uQNViX.png)
+#### **game.html - Desktop**
+- Please click the below links to view the reports:
+  - [Performance](https://i.imgur.com/vic64QN.png) Report 
+  - [Accessibility](https://i.imgur.com/0uQNViX.png) Report
      - Lost points on accessibility due to poor contrast between background and text colour on the footer.
      - I didn't address this issue as I felt that since the only information contained in the footer was 
      copyright information it was not necessary as it did not effect the playability of the game.  
-
   ![imgur](https://i.imgur.com/sbtkXaN.png)  
-
      - Lost points due to alt attributes not present on images
      - I did not address this issue as the images were created from a javascript array  
-
   ![imgur](https://i.imgur.com/pR5HFJb.png)  
-
-  **Best Practices & SEO**  
-  
-  ![best practices & SEO](https://i.imgur.com/Z8Bfwnx.png)  
-
+  - [Best Practices & SEO](https://i.imgur.com/Z8Bfwnx.png) Report 
      - Lost points due to alt attributes not present on images  
-
   ![imgur](https://i.imgur.com/qQeWdPa.png)
 
 #### **index.html - Mobile**
- **Overall performace**
+- Please click the below links to view the reports:
+  - [Performance](https://i.imgur.com/CvpvaDm.png) Report
+  - [Accessibility](https://i.imgur.com/B9xyM7z.png) Report    
+  - [Best Practices & SEO](https://i.imgur.com/DQFFVqZ.png) Report  
 
-  ![performance](https://i.imgur.com/CvpvaDm.png)
-  
- **Accessibility**  
-
-  ![accessibility](https://i.imgur.com/B9xyM7z.png)   
-
-**Best Practices & SEO** 
-
-  ![best practices & SEO](https://i.imgur.com/DQFFVqZ.png)  
-
-#### **game.html - Mobile**
-**Overall performace**  
-
- ![performance](https://i.imgur.com/LPaeg43.png)  
-
-**Accessibility**  
-
- ![accessibility](https://i.imgur.com/K96FaZo.png)  
-
-- lost points due to alt attributes missing from images  
-
-**Best Practices & SEO** 
-
- ![best practices & SEO](https://i.imgur.com/G7UKgSU.png)  
+#### **game.html - Mobile** 
+- Please click the below links to view the reports:
+  - [Performance](https://i.imgur.com/LPaeg43.png) Report 
+  - [Accessibility](https://i.imgur.com/K96FaZo.png) Report
+     - lost points due to alt attributes missing from images  
+  - [Best Practices & SEO](https://i.imgur.com/G7UKgSU.png) Report  
 
 - [GT Metrix](https://gtmetrix.com/) - to test loading speed
  ![GTmetrix](https://i.imgur.com/Ul9R4pg.png)
@@ -411,25 +376,31 @@ The following reports were generated:
 #### **Overlays**
 - **_Win Overlay_**
     - triggered when winning conditions are met
-    - *Play Again* Button resets the gameboard, timer and flip counter and hides overlay
-    - *Home* Button returns user to the home screen
+    - *Play Again* Button resets the gameboard, timer and flip counter and hides overlay when clicked
+    - *Home* Button returns user to the home screen when clicked
     - *Animations* begin as soon as overlay is visible
 
 - **_Lose Overlay_**
     - triggered when losing conditions are met
-    - *Play Again* Button resets the gameboard, timer and flip counter and hides overlay
-    - *Home* Button returns user to the home screen
+    - *Play Again* Button resets the gameboard, timer and flip counter and hides overlay when clicked
+    - *Home* Button returns user to the home screen when clicked
     - *Animations* begin as soon as overlay is visible
 
 #### **Game Functionality**
+Played the game repeatedly to test functionality
 - board locks and cards cannot be clicked while check for match function is running
+    - tried clicking on other cards while active cards are face up
 - matching pairs stay face up
-- flipped cards that are not a match are returned to starting position  
+- flipped cards that are not a match are returned to starting position
+    - other cards cannot be clicked until cards are flipped back  
 - all pairs found with alotted time and flips triggers *Win Overlay*
 - time/flips running out before all pairs are found triggers *Lose Overlay*
 - cards stay face up long enough for user to see images
 - game is winable within the alotted time and flips
 - clicks anywhere outside of the game board are not counted by flip counter
+- repeated clicks on cards when only one card was face up does not effect flip counter
+- repeated clicks on matching pairs does not effect click counter and are only counted as one match
+- matched pairs are disabled and cannot be clicked on again
 
 #### **Responsive Design**
 - Responsive design was tested throughout the build using [DevTools](https://developers.google.com/web/tools/chrome-devtools)
@@ -482,7 +453,6 @@ and [Am I Responsive](http://ami.responsivedesign.is/)
                 clearTimeout(timerId);
             }
     ```
-
 - `onclick` attribute of `gameBoard` not removing after first click and 
  causing timer to restart with every subsequent click
     - created new gobal variable `firstClick` and incremented it
@@ -506,7 +476,6 @@ and [Am I Responsive](http://ami.responsivedesign.is/)
     document.getElementsByClassName('win-overlay')[0].style.display = 'block';
     document.getElementsByClassName('lose-overlay')[0].style.display = 'block';
 ```
-
 - Flip counter not counting card clicks
    - created new global variable `clickCounter` and decremented it
    - created new local variable `clickCount`, added `textContent` attribute and set it as the value of `clickCounter`
@@ -530,9 +499,9 @@ and [Am I Responsive](http://ami.responsivedesign.is/)
    - added `if` condition to `createBoard()`
    ```javascript
     if (flipCounter < 2) {
-                    flipCard(this);
-                    flipCount();
-                }
+        flipCard(this);
+        flipCount();
+    }
     ```
 - Game board not reseting in `resetGame()`
    - created new local variable
@@ -553,6 +522,30 @@ and [Am I Responsive](http://ami.responsivedesign.is/)
         timer.textContent = '00:00';
         clearInterval(timerId);
     ```
+- Repeated clicks on a matching pair could trigger win conditions and were counted as legitimate clicks by click counter
+  - created `disableCards()` to disable matched pairs so they cannot be 
+  clicked on once they have been matched and called it in `checkForMatch()`
+  ```javascript
+  function disableCards(card) {
+        card.classList.add('disable-card');
+        card.src = card.getAttribute('data-path');
+    }
+  ```
+- Repeated clicks on the first card flipped were counted by click counter and also broke the functionality by 
+staying face up regardless of whether it was a match or not
+  - added `.disable-card` to `card` in `flipCard()` to stop illegal clicks effecting game functionality
+  ```javascript
+  function flipCard(card) {
+       card.classList.add('flip', 'card-front', 'card-back', 'disable-card');
+       card.src = card.getAttribute('data-path');
+       setTimeout(checkForMatch(card), 500);
+    }
+  ```
+  - removed `.disable-card` from `previousCard` and `currentCard` in `unFlip()` so unmatched cards were back in play
+  ```javascript
+        previousCard.classList.remove('card-back', 'card-front', 'flip', 'disable-card');
+        currentCard.classList.remove('card-back', 'card-front', 'flip', 'disable-card'); 
+  ```
 
 ### **5.2 Still Existing**
 - **_How to Play_** button on home page
@@ -561,11 +554,11 @@ and [Am I Responsive](http://ami.responsivedesign.is/)
 - **_Layout_**
   - layout not responsive in landscape position on mobile/tablet devices 
 
-- **_Cards Flipping_**
+- **_Delay on image displaying on card flip_**
    - slight delay on image being displayed after card is clicked
    - this is not a constant problem and is more of an issue on mobile devices
-   - I have not yet figured out what is causing it
-   - I compressed the images and converted them from jpg to png which reduced the delay
+   - I compressed the images which reduced the delay slightly
+   - further investigation is needed into this issue
 
 ##### [Back to Table of Contents](#table-of-contents)
 ---
@@ -622,7 +615,7 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
   - [Pixabay](https://pixabay.com/)
   - [Pexels](https://www.pexels.com/)
   - Developers own photos
-- Ireland from space image on back of card was taken from 
+  - Ireland from space image on back of card was taken from 
 [Pinterest](https://www.pinterest.com/pin/214835844710473737/)
 
 ### **7.3 Code**
@@ -638,7 +631,10 @@ and edited to suit my needs
 ### **7.4 Acknowledgements**
 I would like to say a massve thank you to my mentor [Adegbenga Adeye](https://github.com/deye9) without whom this project would never have gotten finished!
 
-I would also like to thank the CI community on the Code Institute Slack channel.
+I would also like to thank the CI community on the Code Institute Slack channel - 
+in particular [@stevo](https://code-institute-room.slack.com/team/UM6CCB90T), [@Ryan Guest](https://code-institute-room.slack.com/team/U016FFAFHE2) and
+[@Kirsty C](https://code-institute-room.slack.com/team/U014813LKTR) for their feedback of my project in 
+[#peer-code-review channel](https://code-institute-room.slack.com/archives/CGWQJQKC5)
 
 ##### [Back to Table of Contents](#table-of-contents)
 ---
