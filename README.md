@@ -633,7 +633,7 @@ and edited to suit my needs
 I would like to say a massve thank you to my mentor [Adegbenga Adeye](https://github.com/deye9) without whom this project would never have gotten finished!
 
 I would also like to thank the CI community on the Code Institute Slack channel - 
-in particular [@stevo](https://code-institute-room.slack.com/team/UM6CCB90T), [@Ryan Guest](https://code-institute-room.slack.com/team/U016FFAFHE2) and
+in particular [@stevo](https://code-institute-room.slack.com/team/UM6CCB90T), [@Deborah_alumni](https://code-institute-room.slack.com/team/UC0HYGN4E), [@Ryan Guest](https://code-institute-room.slack.com/team/U016FFAFHE2) and
 [@Kirsty C](https://code-institute-room.slack.com/team/U014813LKTR) for their feedback of my project in 
 [#peer-code-review channel](https://code-institute-room.slack.com/archives/CGWQJQKC5)
 
