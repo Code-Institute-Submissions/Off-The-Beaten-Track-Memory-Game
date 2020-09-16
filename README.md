@@ -630,7 +630,7 @@ and edited to suit my needs
 - **Vendor prefixes** were added based on [Autoprefixer](https://autoprefixer.github.io/)
 
 ### **7.4 Acknowledgements**
-I would like to say a massve thank you to my mentor [Adegbenga Adeye](https://github.com/deye9) without whom this project would never have gotten finished!
+I would like to say a massive thank you to my mentor [Adegbenga Adeye](https://code-institute-room.slack.com/archives/D010XBPCK09) without whom this project would never have gotten finished!
 
 I would also like to thank the CI community on the Code Institute Slack channel - 
 in particular [@stevo](https://code-institute-room.slack.com/team/UM6CCB90T), [@Deborah_alumni](https://code-institute-room.slack.com/team/UC0HYGN4E), [@Ryan Guest](https://code-institute-room.slack.com/team/U016FFAFHE2) and
