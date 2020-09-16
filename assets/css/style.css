@@ -95,6 +95,11 @@ body {
     color: #cc00cc;
 }
 
+.stars {
+    font-size: 2rem;
+    margin: auto;
+}
+
 .modal-title i {
     text-shadow: -3px -3px 3px #800080;
     color: #ff00ff;
@@ -119,6 +124,7 @@ body {
 .rules i {
     color: #cc00cc;
 }
+
 
 .modal-btn {
     margin: auto;
@@ -535,6 +541,14 @@ body {
     .game-footer {
         padding-top: 5px;
         font-size: .75rem;
+    }
+
+    .modal-title {
+        font-size: 1.8rem;
+    }
+
+    .stars {
+        font-size: 1.3rem;
     }
 
     .win-title,
